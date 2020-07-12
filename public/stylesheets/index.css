@@ -1,0 +1,84 @@
+/*! Generales */
+@import url(./partials/_general.css);
+/*! Header */
+@import url(./partials/_header.css);
+/*! Footer */
+@import url(./partials/_footer.css);
+
+/*? Cards */
+.ccCards .row .col-12 div i {
+  font-size: 50px;
+}
+.ccCards .row .col-12 .ccCard {
+  text-align: center;
+}
+.ccCards .row .col-12 .ccCard i {
+  margin-bottom: 20px;
+  color: #ffc60a;
+}
+.ccCards .row .col-12 .ccCard h4 {
+  margin-bottom: 4px;
+}
+.ccCards .row .col-12 .ccCard p {
+  margin-top: 10px;
+  font-weight: 200;
+}
+/*? Main */
+main {
+  background-color: var(--platinum);
+}
+main .ccProductos {
+  margin-top: 60px;
+}
+main .ccProductos h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 0;
+}
+main .ccProductos .row .col-6 .ccProductBox {
+  text-align: center;
+}
+main .ccProductos .row .col-6 .ccProductBox img {
+  max-width: 100%;
+  padding: 10px;
+}
+main .ccProductos .row .col-6 .ccProductBox p {
+  margin-bottom: 5px;
+  font-weight: 200;
+}
+main .ccProductos .row .col-6 .ccProductBox .ccPrecio {
+  font-weight: 300;
+  color: green;
+}
+main .ccCombos {
+  margin-top: 60px;
+}
+main .ccCombos h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 0;
+}
+main .ccCombos .row .col-6 .ccComboBox {
+  text-align: center;
+}
+main .ccCombos .row .col-6 .ccComboBox img {
+  max-width: 100%;
+  padding: 10px;
+}
+main .ccCombos .row .col-6 .ccComboBox p {
+  margin-bottom: 5px;
+  font-weight: 200;
+}
+main .ccCombos .row .col-6 .ccComboBox .ccPrecio {
+  font-weight: 300;
+  color: green;
+}
+
+
+/************ Thank You Page **************/
+.ccThankYou {
+  height: 100vh;
+}
+.ccThankYou .ccMensajeThankYou {
+  max-width: 540px;
+}

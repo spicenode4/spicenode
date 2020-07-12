@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/_head.ejs') %>
+  <link rel="stylesheet" href="/stylesheets/productos.css">
+  <title>Nombre del producto - Spice Node</title>
+</head>
+
+<body>
+  <%- include('./partials/_header.ejs') %>
+
+  <!-- Producto Individual -->
+  <main class="my-5">
+    <div class="container">
+      <div class="row shadow py-5 bg-white">
+        <div class="col-12 col-lg-6">
+          <img class="mw-100" src="/images/tikka.png" alt="">
+        </div>
+        <div class="col-12 col-lg-6 p-5">
+          <section class="ccInfoProducto">
+            <h1 class="border-bottom pb-2">Savory Tikka</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, excepturi.</p>
+            <p class="mt-3">$100</p>
+            <article class="ccIngredientes my-3">
+              <h4 class="my-2">Ingredientes</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, atque.</p>
+            </article>
+            <article class="ccUsosSugeridos my-3">
+              <h4 class="my-2">Usos sugeridos</h4>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, facilis.</p>
+            </article>
+            <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Productos relacionados -->
+  <section class="ccProductosRelacionados">
+    <div id="carouselExampleInterval" class="carousel slide shadow-lg bg-white" data-ride="carousel">
+      <div class="carousel-inner">
+        <h2 class="mt-5">Probá también...</h2>
+        <div class="carousel-item active" data-interval="false">
+          <div class="container my-5">
+            <div class="row">
+              <div class="col-6 col-md-4">
+                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
+                  <img src="/images/cajun.png" alt="cajun">
+                  <h3>Tandoor</h3>
+                  <p class="my-1">Lorem, ipsum dolor.</p>
+                  <p>$100</p>
+                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+                </section>
+              </div>
+              <div class="col-6 col-md-4">
+                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
+                  <img src="/images/cajun.png" alt="">
+                  <h3>Tandoor</h3>
+                  <p class="my-1">Lorem, ipsum dolor.</p>
+                  <p>$100</p>
+                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+                </section>
+              </div>
+              <div class="col-6 col-md-4">
+                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
+                  <img src="/images/cajun.png" alt="">
+                  <h3>Tandoor</h3>
+                  <p class="my-1">Lorem, ipsum dolor.</p>
+                  <p>$100</p>
+                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-interval="false">
+          <div class="container my-5">
+            <div class="row">
+              <div class="col-6 col-md-4">
+                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
+                  <img src="/images/cajun.png" alt="cajun">
+                  <h3>Tandoor</h3>
+                  <p class="my-1">Lorem, ipsum dolor.</p>
+                  <p>$100</p>
+                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+                </section>
+              </div>
+              <div class="col-6 col-md-4">
+                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
+                  <img src="/images/cajun.png" alt="">
+                  <h3>Tandoor</h3>
+                  <p class="my-1">Lorem, ipsum dolor.</p>
+                  <p>$100</p>
+                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+                </section>
+              </div>
+              <div class="col-6 col-md-4">
+                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
+                  <img src="/images/cajun.png" alt="">
+                  <h3>Tandoor</h3>
+                  <p class="my-1">Lorem, ipsum dolor.</p>
+                  <p>$100</p>
+                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+
+  <%- include('./partials/_footer.ejs') %>
+  <%- include('./partials/_bootstrapscripts.ejs') %>
+</body>
+
+</html>

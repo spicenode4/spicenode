@@ -1,0 +1,39 @@
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+header .ccHeader1 {}
+header .ccHeader1 .ccSocial a i {
+  color: white;
+}
+header .ccHeader1 .ccShipping p {
+  margin: 0px;
+  font-weight: 400;
+  color: white;
+  text-transform: uppercase;
+}
+header .ccHeader2 {
+  background-color: lightgray;
+}
+header .ccHeader2 .ccUsuario ul li {
+  margin: 5px;
+}
+header .ccHeader2 .ccUsuario ul li i {
+  margin-right: 5px;
+  color: #e0a800;
+}
+header .ccHeader2 .ccUsuario ul li a {
+  color: #0a0a0b;
+  text-transform: uppercase;
+}
+header .ccHeader3 {
+  border-bottom: 1px solid grey;
+}
+header .ccHeader3 ul {
+  justify-content: space-evenly;
+}
+header .ccHeader3 ul li a {
+  margin: 0 5px;
+  color: black;
+}

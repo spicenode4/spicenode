@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/_head.ejs') %>
+  <link rel="stylesheet" href="/stylesheets/register.css">
+  <title>Registro - Spice Node</title>
+
+</head>
+
+<body>
+  <%- include('./partials/_header.ejs') %>
+
+  <!-- Formulario de registro -->
+  <div class="ccFormularioSubirProducto container d-flex flex-wrap flex-column align-items-center">
+    <h2 class="pt-5">Bienvenido a Spice Node</h2>
+    <p>Por favor complete la información requerida para completar tu registro</p>
+    <div class="ccDetalleSubirProducto mt-5 bg-white shadow p-5">
+      <h3>Informacion personal</h3>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="inputProduct">Nombre</label>
+            <input type="text" id="inputNombre" class="form-control" placeholder="Cosme Fulanito">
+          </div>
+          <div class="form-group col-12">
+            <label for="inputPrecio">Email</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="emailfalso123@gmail.com">
+          </div>
+          <div class="form-group col-12">
+            <label for="inputSku">Password</label>
+            <input type="password" id="inputSku" class="form-control" placeholder="123456789">
+            <small class="form-text text-muted">Por favor no le pongas 12345689 😂</small>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success btn-sm">Confirmar registro</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include('./partials/_bootstrapscripts.ejs') %>
+</body>
+
+</html>

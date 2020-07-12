@@ -1,0 +1,11 @@
+/*! Generales */
+@import url('./partials/_general.css');
+/*! Header */
+@import url('./partials/_header.css');
+
+.ccFormularioSubirProducto h2, p {
+  text-align: center;
+}
+.ccDetalleSubirProducto {
+  max-width: 600px;
+}
