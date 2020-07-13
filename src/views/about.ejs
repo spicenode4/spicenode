@@ -3,11 +3,50 @@
 
 <head>
   <%- include('./partials/_head.ejs') %>
-  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/about.css">
+  <title>About Us - Spice Node</title>
 </head>
 
 <body>
-  hola
+  <!-- Header -->
+  <%- include('./partials/_header.ejs') %>
+  <img src="/images/spiceabout.jpg" class="img-fluid" alt="spice_about">
+
+  <!-- Main About Us -->
+  <section class="ccAboutUs">
+    <div class="container bg-white shadow p-4 my-5 rounded">
+      <h2 class="my-4">Acerca de nosotros</h2>
+      <hr>
+      <article class="ccAboutUsInfo px-5 text-justify">
+        <p>
+          SpiceNode nace del gustos por los sabores y los aromas de las especias. Una buena comida es la sumatoria de
+          pequeños detalles, es una experiencia emocional donde intervienen todos nuestros sentidos.
+        </p>
+        <p>
+          Nuestro compromiso es proporcionar una experiencia única cuidando la calidad nutricional de
+          nuestros productos. la salud de las personas y los alimentos que consumimos es lo que realmente nos impulsa.
+        </p>
+        <p>
+          El respeto por los ingredientes seleccionados, el estudio metodico de los procesos, ideas y
+          recetas, la interpretacion clara de qué queremos lograr y el orgullo de todo nuestro equipo, hacen de
+          SpiceNode la compañia numero uno de especias y condimentos saludables.
+        </p>
+        <p>
+          Todos nuestros productos son bajos en sodio, libres de gluten, sin conservantes ni aditivos
+          artificiales.
+        </p>
+        <p>
+          Nuestra mision es brindar condimentos únicos deliciosos y saludables para seguir
+          deleitando el paladar a traves de gustos y aromas que convierten lo cotidiano en extraordinario.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <%- include('./partials/_footer.ejs') %>
+  <!-- Bootstrap Scripts -->
+  <%- include('./partials/_bootstrapscripts.ejs') %>
 </body>
 
 </html>
