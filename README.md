@@ -1,5 +1,14 @@
 # SpiceNode
 
+# Importante!
+
+Tuvimos que crear otro repo ya que tuvimos problemas con el actual.
+Dejamos aquí la nueva URL de acceso:
+
+## Repo GitHub
+
+- https://github.com/spicenode4/spicenode
+
 ## Integrantes
 
 - Cristian Coppari
