@@ -1,0 +1,25 @@
+/*' IMPORTS */
+/** Generales */
+@import url(./partials/_general.css);
+/** Header */
+@import url(./partials/_header.css);
+/** Footer */
+@import url(./partials/_footer.css);
+/** About */
+@import url(./partials/_about.css);
+/** Admin */
+@import url(./partials/_admin.css);
+/** Carrito */
+@import url(./partials/_carrito.css);
+/** Carrito */
+@import url(./partials/_contact.css);
+/** Index */
+@import url(./partials/_index.css);
+/** Products */
+@import url(./partials/_products.css);
+/** Register User */
+@import url(./partials/_registerUser.css);
+/** Upload Products */
+@import url(./partials/_uploadProduct.css);
+/** Upload Products */
+@import url(./partials/_user.css);

@@ -1,46 +1,38 @@
-/*! Generales */
-@import url(./partials/_general.css);
-/*! Header */
-@import url(./partials/_header.css);
-/*! Footer */
-@import url(./partials/_footer.css);
-
-.contacto-portada{
+.ccMasterContact .contacto-portada{
   background-image: url('/images/contactoPortada.jpg');
   background-size:cover ;
   background-size: 300px;
   height: 200px;
   width: 100vw;
 }
-.contacto-portada h1{
+.ccMasterContact .contacto-portada h1{
   text-align: center;
   vertical-align: middle;
   padding-top: 50px;
   padding-bottom: 100px;
 }
 
-.datos-contacto{
+.ccMasterContact .datos-contacto{
   padding: 30px 30px;
   text-align: center;
 }
-.datos-contacto a {
+.ccMasterContact .datos-contacto a {
   color: black;
   text-decoration: underline;
 }
 
-hr{
+.ccMasterContact hr{
   width: 30%;
   margin: 20px auto;
 }
 
-.formularioContacto{
+.ccMasterContact .formularioContacto{
   width: 50%;
   margin: 0 auto;
 }
 
-.botonEnviar{
+.ccMasterContact .botonEnviar{
   background-color: #ffc60a;
   color: black;
   border-color: #ffc60a;
-
 }

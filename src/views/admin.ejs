@@ -3,44 +3,47 @@
 
 <head>
   <%- include('./partials/_head.ejs') %>
-  <link rel="stylesheet" href="/stylesheets/register.css">
   <title>Carga de Productos - Spice Node</title>
 
 </head>
 
 <body>
   <%- include('./partials/_header.ejs') %>
-
-  <!-- Formulario de carga de productos -->
-  <div class="ccFormularioSubirProducto container d-flex flex-wrap flex-column align-items-center">
-    <h2 class="pt-5">Bienvenido nombreDeLaPersona</h2>
-    <p>Por favor complete la información requerida para cargar un producto</p>
-    <div class="ccDetalleSubirProducto mt-5 bg-white shadow p-5">
-      <h3>Detalle del producto</h3>
-      <form>
-        <div class="form-row">
-          <div class="form-group col-12">
-            <label for="inputProduct">Nombre del producto</label>
-            <input type="text" id="inputProduct" class="form-control" placeholder="Ej.: Spanish Tacos">
+  <div class="ccMasterAdmin">
+    <!-- Formulario de carga de productos -->
+    <div class="ccFormularioSubirProducto container d-flex flex-wrap flex-column align-items-center">
+      <h2 class="pt-5">Bienvenido nombreDeLaPersona</h2>
+      <p>Por favor complete la información requerida para cargar un producto</p>
+      <div class="ccDetalleSubirProducto mt-5 bg-white shadow p-5">
+        <h3>Detalle del producto</h3>
+        <form action="/products" method="POST">
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="name">Nombre del producto</label>
+              <input type="text" id="inputProduct" name="name" class="form-control" placeholder="Ej.: Spanish Tacos">
+            </div>
+            <div class="form-group col-12">
+              <label for="price">Precio</label>
+              <input type="text" id="inputPrecio" name="price" class="form-control" placeholder="Ej.: $100">
+            </div>
+            <div class="form-group col-12">
+              <label for="sku">SKU</label>
+              <input type="text" id="inputSku" name="sku" class="form-control" placeholder="Ej.:SP1">
+            </div>
+            <div class="form-group col-12">
+              <label for="description">Descripción</label>
+              <input type="text" id="inputDescription" name="description" class="form-control" placeholder="Ej.:Es un condimento muy rico">
+            </div>
+            <div class="form-group col-12">
+              <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
+              <input type="file" class="form-control-file" id="inputProductImage" name="productImage">
+            </div>
           </div>
-          <div class="form-group col-12">
-            <label for="inputPrecio">Precio</label>
-            <input type="text" id="inputPrrecio" class="form-control" placeholder="Ej.: $100">
-          </div>
-          <div class="form-group col-12">
-            <label for="inputSku">SKU</label>
-            <input type="text" id="inputSku" class="form-control" placeholder="Ej.:SP1">
-          </div>
-          <div class="form-group col-12">
-            <label class="text-secondary" for="exampleFormControlFile1">Archivos en PNG o JPEG</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-          </div>
-        </div>
-        <button type="submit" class="btn btn-success btn-sm">Confirmar carga</button>
-      </form>
+          <button type="submit" class="btn btn-success btn-sm">Confirmar carga</button>
+        </form>
+      </div>
     </div>
   </div>
-
   <%- include('./partials/_bootstrapscripts.ejs') %>
 </body>
 

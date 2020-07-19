@@ -1,29 +1,52 @@
-/*! Generales */
-@import url(./partials/_general.css);
-/*! Header */
-@import url(./partials/_header.css);
-/*! Footer */
-@import url(./partials/_footer.css);
+/** Producto */
+/*!Porque me modifica el color de todos los parrafos? No tendria que modificar solo lo que esta dentro del section ccInfoProductos? */
+.ccInfoProducto p:nth-of-type(1) {
+  color: grey;
+}
+.ccInfoProducto p:nth-of-type(2) {
+  color: green;
+  font-size: 25px;
+}
 
-/*? Cards */
-.ccCards .row .col-12 div i {
-  font-size: 50px;
-}
-.ccCards .row .col-12 .ccCard {
+/** Productos relacioados */
+.ccProductosRelacionados h2 {
   text-align: center;
+  font-size: 3rem;
 }
-.ccCards .row .col-12 .ccCard i {
-  margin-bottom: 20px;
-  color: #ffc60a;
-}
-.ccCards .row .col-12 .ccCard h4 {
-  margin-bottom: 4px;
-}
-.ccCards .row .col-12 .ccCard p {
-  margin-top: 10px;
+.ccProductoRelacionado p:nth-of-type(1) {
   font-weight: 200;
 }
-/*? Main */
+.ccProductoRelacionado p:nth-of-type(2) {
+  color: green;
+}
+
+.carousel {
+  
+}
+.carousel .row div:nth-of-type(3) {
+  display: none;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.ccProductoRelacionado img {
+  max-width: 100%
+}
+
+@media (min-width: 768px) {
+  .carousel .row div:nth-of-type(3) {
+  display: block;
+}
+  .ccProductoRelacionado img {
+    max-width: 100%;
+  }
+}
+
+/******************* TODOS LOS PRODUCTOS *******************/
+
 main {
   background-color: var(--platinum);
 }
@@ -72,13 +95,4 @@ main .ccCombos .row .col-6 .ccComboBox p {
 main .ccCombos .row .col-6 .ccComboBox .ccPrecio {
   font-weight: 300;
   color: green;
-}
-
-
-/************ Thank You Page **************/
-.ccThankYou {
-  height: 100vh;
-}
-.ccThankYou .ccMensajeThankYou {
-  max-width: 540px;
 }

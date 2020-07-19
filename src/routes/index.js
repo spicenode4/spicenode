@@ -5,11 +5,11 @@ var indexController = require('../controllers/indexController');
 //* Pagina home
 router.get('/', indexController.index)
 //* Carrito de compras
-router.get('/carrito', indexController.cart)
+router.get('/cart', indexController.cart)
 //* About
 router.get('/about', indexController.about)
 //* Contacto
-router.get('/contacto', indexController.contacto)
+router.get('/contact', indexController.contact);
 //* Gracias
 router.get('/gracias', indexController.thankYou);
 

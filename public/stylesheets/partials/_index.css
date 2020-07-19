@@ -1,0 +1,77 @@
+/*? Cards */
+.ccMasterIndex .ccCards .row .col-12 div i {
+  font-size: 50px;
+}
+.ccMasterIndex .ccCards .row .col-12 .ccCard {
+  text-align: center;
+}
+.ccMasterIndex .ccCards .row .col-12 .ccCard i {
+  margin-bottom: 20px;
+  color: #ffc60a;
+}
+.ccMasterIndex .ccCards .row .col-12 .ccCard h4 {
+  margin-bottom: 4px;
+}
+.ccMasterIndex .ccCards .row .col-12 .ccCard p {
+  margin-top: 10px;
+  font-weight: 200;
+}
+/*? Main */
+.ccMasterIndex main {
+  background-color: var(--platinum);
+}
+.ccMasterIndex main .ccProductos {
+  margin-top: 60px;
+}
+.ccMasterIndex main .ccProductos h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 0;
+}
+.ccMasterIndex main .ccProductos .row .col-6 .ccProductBox {
+  text-align: center;
+}
+.ccMasterIndex main .ccProductos .row .col-6 .ccProductBox img {
+  max-width: 100%;
+  padding: 10px;
+}
+.ccMasterIndex main .ccProductos .row .col-6 .ccProductBox p {
+  margin-bottom: 5px;
+  font-weight: 200;
+}
+.ccMasterIndex main .ccProductos .row .col-6 .ccProductBox .ccPrecio {
+  font-weight: 300;
+  color: green;
+}
+.ccMasterIndex main .ccCombos {
+  margin-top: 60px;
+}
+.ccMasterIndex main .ccCombos h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 0;
+}
+.ccMasterIndex main .ccCombos .row .col-6 .ccComboBox {
+  text-align: center;
+}
+.ccMasterIndex main .ccCombos .row .col-6 .ccComboBox img {
+  max-width: 100%;
+  padding: 10px;
+}
+.ccMasterIndex main .ccCombos .row .col-6 .ccComboBox p {
+  margin-bottom: 5px;
+  font-weight: 200;
+}
+.ccMasterIndex main .ccCombos .row .col-6 .ccComboBox .ccPrecio {
+  font-weight: 300;
+  color: green;
+}
+
+
+/************ Thank You Page **************/
+.ccThankYou {
+  height: 100vh;
+}
+.ccThankYou .ccMensajeThankYou {
+  max-width: 540px;
+}

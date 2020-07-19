@@ -1,0 +1,11 @@
+.ccAboutMaster img {
+  width: 100%;
+}
+
+.ccAboutMaster h2 {
+  text-align: center;
+}
+
+.ccAboutMaster .ccAboutUs p {
+  margin: 20px 0;
+}

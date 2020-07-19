@@ -8,8 +8,8 @@ let homeController = {
   about: (req, res) => {
     res.render('about')
   },
-  contacto: (req, res) => {
-    res.render('contacto')
+  contact: (req, res) => {
+    res.render('contact')
   },
   thankYou: (req, res) => {
     res.render('gracias')

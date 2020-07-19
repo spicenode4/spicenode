@@ -1,4 +1,4 @@
-const productosController = {
+const productController = {
   allProducts: (req, res) => {
     res.render('allProducts')
   },
@@ -7,4 +7,4 @@ const productosController = {
   }
 }
 
-module.exports = productosController;
+module.exports = productController;
