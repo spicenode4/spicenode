@@ -15,7 +15,7 @@ const userController = {
       userName: req.body.userName,
       userLastName: req.body.userLastName,
       userCategory: req.body.userCategory,
-      //userAvatar: req.body.avatar,
+      userAvatar: req.files[0].filename,
       userMail: req.body.userMail,
       userPassword: bcrypt.hashSync(req.body.userPassword, 10)
     }
@@ -33,11 +33,8 @@ const userController = {
     let newUsersJSON = JSON.stringify(usersPARSED);
 
     fs.writeFileSync(path.join(__dirname, '../data/users.json'), newUsersJSON)
-    res.render('login')
+    res.render('index')
 
-  },
-  admin: (req, res) => {
-    res.render('admin')
   },
   usuario: (req, res) => {
     res.render('user')

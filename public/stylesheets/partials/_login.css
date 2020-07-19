@@ -1,3 +1,7 @@
+.ccMasterLogin {
+  background-color: red;
+}
+
 .ccMasterLogin .ccSignIn {
   max-width: 600px
 }

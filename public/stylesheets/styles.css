@@ -1,25 +1,40 @@
 /*' IMPORTS */
-/** Generales */
-@import url(./partials/_general.css);
-/** Header */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Raleway:wght@100;200;300;400;700&display=swap');
+
 @import url(./partials/_header.css);
-/** Footer */
 @import url(./partials/_footer.css);
-/** About */
 @import url(./partials/_about.css);
-/** Admin */
 @import url(./partials/_admin.css);
-/** Carrito */
 @import url(./partials/_carrito.css);
-/** Carrito */
 @import url(./partials/_contact.css);
-/** Index */
 @import url(./partials/_index.css);
-/** Products */
 @import url(./partials/_products.css);
-/** Register User */
 @import url(./partials/_registerUser.css);
-/** Upload Products */
 @import url(./partials/_uploadProduct.css);
-/** Upload Products */
 @import url(./partials/_user.css);
+
+:root {
+  --platinum: #eaeaea;
+  
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway";
+  font-size: 1em;
+  background-color: var(--platinum);
+}
+
+p {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Serif Text";
+}

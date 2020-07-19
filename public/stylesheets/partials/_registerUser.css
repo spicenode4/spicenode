@@ -1,6 +1,6 @@
-.ccFormularioRegistro h2, p {
+.ccMasterRegister .ccFormularioRegistro h2, p {
   text-align: center;
 }
-.ccDetalleRegistro {
+.ccMasterRegister .ccDetalleRegistro {
   max-width: 600px;
 }

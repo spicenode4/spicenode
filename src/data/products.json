@@ -1,0 +1,18 @@
+[
+  {
+    "productID": "1223123",
+    "productName": "picantito",
+    "productDescription": "picantitototototo",
+    "productImage": "productImage-1595199914532.png",
+    "productCategory": "aaaaaa",
+    "productPrice": "100"
+  },
+  {
+    "productID": "a",
+    "productName": "aaaaaa",
+    "productDescription": "aaaaaaaaaaaa",
+    "productImage": "productImage-1595199978056.png",
+    "productCategory": "a123123",
+    "productPrice": "111111"
+  }
+]
