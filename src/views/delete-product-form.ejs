@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/_head.ejs') %> 
+  <title>Modificar Producto - Spice Node</title>
+</head>
+
+<body>
+  <%- include('./partials/_header.ejs') %>
+
+  <!-- Formulario de modificacion de productos -->
+  <div class="ccFormularioEliminarProducto container d-flex flex-wrap flex-column align-items-center">
+    <h2 class="pt-5">Eliminar un producto</h2>
+    <p>Por favor complete la información requerida para modificar un producto</p>
+    <div class="ccDetalleEliminarProducto mt-5 bg-white shadow p-5">
+      <h3>Detalle del producto</h3>
+      <form action="/products/<%= product.productId %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="productName">ID</label>
+            <input type="text" name="productId" id="" class="form-control" placeholder="Ej.: Spanish Tacos" value="<%= product.productId %>">
+          </div>
+          <div class="form-group col-12">
+            <label for="productName">Nombre del producto</label>
+            <input type="text" name="productName" id="" class="form-control" placeholder="Ej.: Spanish Tacos" value="<%= product.productName %>">
+          </div>
+          <div class="form-group col-12">
+            <label for="productDescription">Descripcion</label>
+            <input type="text" name="productDescription" id="" class="form-control" placeholder="Ej.: Este condimento tiene tal y cual cosa" value="<%= product.productDescription %>">
+          </div>
+          <div class="form-group col-12">
+            <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
+            <input type="file" name="productImage" class="form-control-file" id="" value="<%= product.productImage %>">
+          </div>
+          <div class="form-group col-12">
+            <label for="productCategory">Categoria de producto</label>
+            <input type="text" name="productCategory" id="" class="form-control" placeholder="Ej.: Picantes" value="<%= product.productCategory %>">
+          </div>
+          <div class="form-group col-12">
+            <label for="productPrice">Precio</label>
+            <input type="text" name="productPrice" id="" class="form-control" placeholder="Ej.: 100" value="<%= product.productPrice %>">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-danger btn-sm">Eliminiar producto</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include('./partials/_bootstrapscripts.ejs') %>
+</body>
+
+</html>

@@ -1,12 +1,7 @@
-.ccMasterLogin {
-  background-color: red;
-}
-
-.ccMasterLogin .ccSignIn {
+.ccSignIn {
   max-width: 600px
 }
 
-.ccMasterLogin .form-group h4 {
+.form-group h4 {
   margin: 0px;
 }
-

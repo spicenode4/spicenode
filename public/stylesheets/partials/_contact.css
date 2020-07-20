@@ -1,38 +1,39 @@
-.ccMasterContact .contacto-portada{
+.contacto-portada{
   background-image: url('/images/contactoPortada.jpg');
   background-size:cover ;
   background-size: 300px;
   height: 200px;
   width: 100vw;
 }
-.ccMasterContact .contacto-portada h1{
+.contacto-portada h1{
   text-align: center;
   vertical-align: middle;
   padding-top: 50px;
   padding-bottom: 100px;
 }
 
-.ccMasterContact .datos-contacto{
+.datos-contacto{
   padding: 30px 30px;
   text-align: center;
 }
-.ccMasterContact .datos-contacto a {
+.datos-contacto a {
   color: black;
   text-decoration: underline;
 }
 
-.ccMasterContact hr{
+hr{
   width: 30%;
   margin: 20px auto;
 }
 
-.ccMasterContact .formularioContacto{
+.formularioContacto{
   width: 50%;
   margin: 0 auto;
 }
 
-.ccMasterContact .botonEnviar{
+.botonEnviar{
   background-color: #ffc60a;
   color: black;
   border-color: #ffc60a;
+
 }

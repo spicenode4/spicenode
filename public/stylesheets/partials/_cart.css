@@ -1,37 +1,37 @@
-.ccMasterCart .ccCarrito article:first-child {
+.ccCarrito article:first-child {
   border-top-right-radius: .25em;
   border-top-left-radius: .25em;
 }
-.ccMasterCart .ccCarrito article:last-child {
+.ccCarrito article:last-child {
   border-bottom-right-radius: .25em;
   border-bottom-left-radius: .25em;
 }
 
-.ccMasterCart .ccCarrito img {
+.ccCarrito img {
   width: 100px;
 }
-.ccMasterCart .ccCarrito button {
+.ccCarrito button {
   border: 0;
 }
-.ccMasterCart .ccDetalleProducto input {
+.ccDetalleProducto input {
   width: 40px;
 }
-.ccMasterCart .ccCarrito > article {
+.ccCarrito > article {
   border-bottom: 1px var(--platinum) solid;
 }
-.ccMasterCart .ccCarrito > article:nth-last-child(1) {
+.ccCarrito > article:nth-last-child(1) {
   border: none;
 }
 
 /** Ticket */
-.ccMasterCart .ccTicket h6 {
+.ccTicket h6 {
   font-family: "Raleway";
   font-weight: 400;
   margin: 0;
 }
 
 @media (min-width: 768px) {
-  .ccMasterCart .ccCarrito img {
+  .ccCarrito img {
     max-width: 50%;
   }
 }

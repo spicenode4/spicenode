@@ -1,15 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <%- include('./partials/_head.ejs') %>
-  <title>No hay nada aquí</title>
-</head>
-
-<body>
-  <main>
+  
+  <head>
+    <%- include('./partials/_head.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <title>No hay nada aquí</title>
+  </head>
+  
+  <body>
+    <main>
+      <h1><%= message %></h1>
+      <h2><%= error.status %></h2>
+      <pre><%= error.stack %></pre>
     <div class="container mw-100 d-flex flex-wrap flex-column align-content-center p-5">
-      <h1>Te perdiste? 🙄</h1>
+      <h2>Te perdiste? 🙄</h2>
       <h2>Aquí no hay nada para ver</h2>
       <p>Puedes seguir navegando haciendo click <a href="/">aquí</a></p>
     </div>

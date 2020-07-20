@@ -14,10 +14,10 @@ footer ul li a {
 footer nav.ccFNavBarUsuario {
   margin-left: 60px;
 }
-div.container-fluid {
+.ccFooter2 {
   background-color: #eaeaea;
 }
-div.container-fluid div.ccCreditos p {
+.ccFooter2 .ccCreditos p {
   margin: 0;
   text-align: center;
   letter-spacing: 2px;

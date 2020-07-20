@@ -1,16 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var indexController = require('../controllers/indexController');
+const indexController = require('../controllers/indexController');
 
-//* Pagina home
-router.get('/', indexController.index)
-//* Carrito de compras
-router.get('/cart', indexController.cart)
-//* About
-router.get('/about', indexController.about)
-//* Contacto
-router.get('/contact', indexController.contact);
-//* Gracias
-router.get('/gracias', indexController.thankYou);
-
+// Pagina Home
+router.get('/', indexController.index);
+// About
+router.get('/about', indexController.aboutUs);
+// Contact
+router.get('/contact', indexController.contactUs);
+// Carrito
+router.get('/cart', indexController.cart);
+// Thank You
+router.get('/thank-you', indexController.thankYou);
 module.exports = router;

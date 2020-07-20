@@ -9,6 +9,9 @@ Dejamos aquí la nueva URL de acceso:
 
 - https://github.com/spicenode4/spicenode
 
+## Trello
+- 
+
 ## Integrantes
 
 - Cristian Coppari
