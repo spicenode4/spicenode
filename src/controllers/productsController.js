@@ -1,24 +1,17 @@
 const fs = require('fs');
 const path = require('path');
+const { check, validationResult, body } = require('express-validator');
 
 let productsJSON = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf-8');
 let productsPARSED;
+(productsJSON == '') ? productsPARSED = [] : productsPARSED = JSON.parse(productsJSON);
 
-if (productsJSON == '') {
-  productsPARSED = [];
-} else {
-  productsPARSED = JSON.parse(productsJSON);
+let lastProductID = 0;
+for (let i = 0; i < productsPARSED.length; i++) {
+  if (productsPARSED[i].productID > lastProductID) {
+    lastProductID = productsPARSED[i].productID
+  }
 }
-
-//* Contador para determinar ID de producto
-// let lastId = (array) => {
-//   let contador = array[0].productId;
-//   for (let i = 0; i < array.length; i++) {
-//     if (productsPARSED[i].productId > contador) {
-//       contador = array[i].productId;
-//     }
-//   }
-// }
 
 const productsController = {
   index: (req, res) => {
@@ -30,24 +23,29 @@ const productsController = {
     res.render('product-upload-form')
   },
   create: (req, res, next) => {
-    let newProduct = {
-      productId: req.body.productId,
-      productName: req.body.productName,
-      productDescription: req.body.productDescription,
-      productImage: req.files[0].filename,
-      productCategory: req.body.productCategory,
-      productPrice: req.body.productPrice
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let newProduct = {
+        productID: lastProductID + 1,
+        productName: req.body.productName,
+        productDescription: req.body.productDescription,
+        productCategory: req.body.productCategory,
+        productIngredients: req.body.productIngredients,
+        productPrice: req.body.productPrice,
+        productImage: (req.files[0] != undefined) ? req.files[0].filename : 'defaultProductAvatar.png'
+      }
+      productsPARSED.push(newProduct);
+      fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productsPARSED));
+      res.redirect('/products')
+    } else {
+      res.render('product-upload-form', {
+        errors: errors.mapped()
+      })
     }
-
-    console.log(req)
-    productsPARSED.push(newProduct);
-    fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productsPARSED));
-
-    res.redirect('/products')
   },
   detail: (req, res) => {
     for (let i = 0; i < productsPARSED.length; i++) {
-      if (productsPARSED[i].productId == req.params.productId) {
+      if (productsPARSED[i].productID == req.params.productId) {
         return res.render('single-product', {
           product: productsPARSED[i]
         })
@@ -57,17 +55,17 @@ const productsController = {
   },
   modifyForm: (req, res) => {
     for (let i = 0; i < productsPARSED.length; i++) {
-      if (productsPARSED[i].productId == req.params.productId) {
+      if (productsPARSED[i].productID == req.params.productId) {
         return res.render('modify-product-form', {
           product: productsPARSED[i]
         });
       }
     }
-    //! FALTA AGREGAR Q HACE SI NO ENCUENTRA NADA
+    res.send('Estás queriendo editar un producto que no existe')
   },
   updateProduct: (req, res, next) => {
     for (let i = 0; i < productsPARSED.length; i++) {
-      if (productsPARSED[i].productId == req.params.productId) {
+      if (productsPARSED[i].productID == req.params.productId) {
         productsPARSED[i] = {
           productId: req.body.productId,
           productName: req.body.productName,

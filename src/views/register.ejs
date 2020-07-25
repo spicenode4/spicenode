@@ -4,12 +4,12 @@
 <head>
   <%- include('./partials/_head.ejs') %>
   <title>Registro - Spice Node</title>
-
+  
 </head>
 
 <body>
   <%- include('./partials/_header.ejs') %>
-
+  
   <!-- Formulario de registro -->
   <div class="ccMasterRegister">
     <div class="ccFormularioRegistroUsuario container d-flex flex-wrap flex-column align-items-center">
@@ -17,36 +17,32 @@
       <p>Por favor complete la información requerida para completar tu registro</p>
       <div class="ccDetalleRegistroUsuario mt-5 bg-white shadow p-5">
         <h3>Informacion personal</h3>
-        <form action="/user/register" method="POST" enctype="multipart/form-data">
+        <form action="/users/register" method="POST" enctype="multipart/form-data">
           <div class="form-row">
-            <div class="form-group col-12">
-              <label for="userID">ID</label>
-              <input type="text" name="userID" id="inputUserID" class="form-control" placeholder="El_Barto">
-            </div>
             <div class="form-group col-12">
               <label for="userName">Nombre</label>
               <input type="text" name="userName" id="inputUserName" class="form-control" placeholder="Cosme">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.userName) ? errors.userName.msg : '' %></small>
             </div>
             <div class="form-group col-12">
               <label for="userLastName">Apellido</label>
               <input type="text" name="userLastName" id="inputUserLastName" class="form-control" placeholder="Fulanito">
-            </div>
-            <div class="form-group col-12">
-              <label for="userCategoryName">Categoria</label>
-              <input type="text" name="userCategory" id="inputUserCategory" class="form-control" placeholder="No se que va acá">
-            </div>
-            <div class="form-group col-12">
-              <label for="userAvatar">Avatar</label>
-              <input type="file" name="userAvatar" id="inputUserAvatar" class="form-control" placeholder="No se que va acá">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.userLastName) ? errors.userLastName.msg : '' %></small>
             </div>
             <div class="form-group col-12">
               <label for="userEmail">Email</label>
               <input type="email" name="userEmail" id="inputUserEmail" class="form-control" placeholder="emailfalso123@gmail.com">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.userEmail) ? errors.userEmail.msg : '' %></small>
             </div>
             <div class="form-group col-12">
               <label for="userPassword">Password</label>
               <input type="password" name="userPassword" id="inputUserPassword" class="form-control" placeholder="123456789">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.userPassword) ? errors.userPassword.msg : '' %></small>
               <small class="form-text text-muted">Por favor no le pongas 12345689 😂</small>
+            </div>
+            <div class="form-group col-12">
+              <label for="userAvatar">Avatar</label>
+              <input type="file" name="userAvatar" id="inputUserAvatar" class="form-control" placeholder="No se que va acá">
             </div>
           </div>
           <button type="submit" class="btn btn-success btn-sm">Confirmar registro</button>

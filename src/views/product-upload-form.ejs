@@ -18,28 +18,34 @@
       <form action="/products" method="POST" enctype="multipart/form-data">
         <div class="form-row">
           <div class="form-group col-12">
-            <label for="productName">ID</label>
-            <input type="text" name="productId" id="" class="form-control" placeholder="Ej.: Spanish Tacos">
-          </div>
-          <div class="form-group col-12">
             <label for="productName">Nombre del producto</label>
             <input type="text" name="productName" id="" class="form-control" placeholder="Ej.: Spanish Tacos">
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productName) ? errors.productName.msg : '' %></small>
           </div>
           <div class="form-group col-12">
             <label for="productDescription">Descripcion</label>
             <input type="text" name="productDescription" id="" class="form-control" placeholder="Ej.: Este condimento tiene tal y cual cosa">
-          </div>
-          <div class="form-group col-12">
-            <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
-            <input type="file" name="productImage" class="form-control-file" id="">
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productDescription) ? errors.productDescription.msg : '' %></small>
           </div>
           <div class="form-group col-12">
             <label for="productCategory">Categoria de producto</label>
             <input type="text" name="productCategory" id="" class="form-control" placeholder="Ej.: Picantes">
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productCategory) ? errors.productCategory.msg : '' %></small>
           </div>
           <div class="form-group col-12">
             <label for="productPrice">Precio</label>
             <input type="text" name="productPrice" id="" class="form-control" placeholder="Ej.: 100">
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productPrice) ? errors.productPrice.msg : '' %></small>
+          </div>
+          <div class="form-group col-12">
+            <label for="productIngredients">Ingredientes</label>
+            <input type="text" name="productIngredients" id="" class="form-control" placeholder="Ej.: Azucar, flores y muchos colores">
+            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productIngredients) ? errors.productIngredients.msg : '' %></small>
+            <small><p>Ingresar los ingredientes separados por comas</p></small>
+          </div>
+          <div class="form-group col-12">
+            <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
+            <input type="file" name="productImage" class="form-control-file" id="">
           </div>
         </div>
         <button type="submit" class="btn btn-success btn-sm">Confirmar carga</button>

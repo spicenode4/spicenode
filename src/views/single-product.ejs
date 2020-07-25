@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row shadow py-5 bg-white">
         <div class="col-12 col-lg-6">
-          <img class="mw-100" src="/images/productImages/<%= product.productImage %> " alt="<%= product.productName %> ">
+          <img class="mw-100" src="/uploads/productsImages/<%= product.productImage %> " alt="<%= product.productName %> ">
         </div>
         <div class="col-12 col-lg-6 p-5">
           <section class="ccInfoProducto">
@@ -24,15 +24,15 @@
             <p class="mt-3"><%= product.productPrice %> </p>
             <article class="ccIngredientes my-3">
               <h4 class="my-2">Ingredientes</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, atque.</p>
+              <p><%= product.productIngredients %> </p>
             </article>
             <article class="ccUsosSugeridos my-3">
               <h4 class="my-2">Usos sugeridos</h4>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, facilis.</p>
             </article>
             <a href="/cart"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
-            <a href="/products/<%= product.productId %>/edit"><button type="submit" class="btn btn-secondary my -4">Modificar producto</button></a>
-            <a href="/products/<%= product.productId %>/delete"><button type="submit" class="btn btn-danger my -4">Eliminar</button></a>
+            <a href="/products/<%= product.productID %>/edit"><button type="submit" class="btn btn-secondary my -4">Modificar producto</button></a>
+            <a href="/products/<%= product.productID %>/delete"><button type="submit" class="btn btn-danger my -4">Eliminar</button></a>
           </section>
         </div>
       </div>

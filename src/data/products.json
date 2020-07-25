@@ -1,0 +1,11 @@
+[
+  {
+    "productID": 1,
+    "productName": "Spanish Tacos",
+    "productDescription": "Condimento mediterraneo",
+    "productCategory": "Picante",
+    "productIngredients": "Azucar",
+    "productPrice": "100",
+    "productImage": "productImage-Spanish Tacos-1595713356043.png"
+  }
+]
