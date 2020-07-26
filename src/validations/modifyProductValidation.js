@@ -32,13 +32,13 @@ let modifyProductValidation = [
       if (value == req.body.productIngredients) {
         return false;
       }
-    }).withMessage('Debes ingresar algo distinto a lo que estaba'),
-  body('productImage')
-    .custom((value, { req }) => {
-      if (req.files[0] == undefined) {
-        return false;
-      }
     }).withMessage('Debes ingresar algo distinto a lo que estaba')
+  // body('productImage')
+  //   .custom((value, { req }) => {
+  //     if (req.files[0].filename == value && !req.files[0]) {
+  //       return false;
+  //     }
+  //   }).withMessage('Debes ingresar una imagen nueva')
 ]
 
 module.exports = modifyProductValidation;

@@ -64,24 +64,37 @@ const productsController = {
     res.send('Estás queriendo editar un producto que no existe')
   },
   updateProduct: (req, res, next) => {
-    let errors = validationResult(req);
-    return res.send(errors);
+    let productToModify;
     for (let i = 0; i < productsPARSED.length; i++) {
       if (productsPARSED[i].productID == req.params.productId) {
-        productsPARSED[i] = {
-          productID: lastProductID,
-          productName: req.body.productName,
-          productDescription: req.body.productDescription,
-          productCategory: req.body.productCategory,
-          productIngredients: req.body.productIngredients,
-          productPrice: req.body.productPrice,
-          productImage: (req.files[0] != undefined) ? req.files[0].filename : 'defaultProductAvatar.png'
-        }
-        console.log(req.body)
-        let newProductsJSON = JSON.stringify(productsPARSED)
-        fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
-        res.redirect('/');
+        productToModify = productsPARSED[i];
       }
+    }
+    let errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+      for (let i = 0; i < productsPARSED.length; i++) {
+        if (productsPARSED[i].productID == req.params.productId) {
+          productsPARSED[i] = {
+            productID: lastProductID,
+            productName: req.body.productName,
+            productDescription: req.body.productDescription,
+            productCategory: req.body.productCategory,
+            productIngredients: req.body.productIngredients,
+            productPrice: req.body.productPrice,
+            productImage: (req.files[0] != undefined) ? req.files[0].filename : 'defaultProductAvatar.png'
+          }
+          console.log(req.body)
+          let newProductsJSON = JSON.stringify(productsPARSED)
+          fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
+          res.redirect('/');
+        }
+      }
+    } else {
+      res.render('modify-product-form', {
+        product: productToModify,
+        errors: errors.mapped()
+      })
     }
   },
   deleteForm: (req, res) => {

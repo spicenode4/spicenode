@@ -16,7 +16,7 @@ router.get('/:productId', productsController.detail);
 // 5 - Formulario de edicion de producto
 router.get('/:productId/edit', productsController.modifyForm);
 // 6 - Accion de edicion de producto
-router.put('/:productId', uploadProduct.any(), productsController.updateProduct);
+router.put('/:productId', uploadProduct.any(), modifyProductValidation, productsController.updateProduct);
 // 7 - Formulario de borrado de productos
 router.get('/:productId/delete', productsController.deleteForm);
 // 8 - Accion de borrado
