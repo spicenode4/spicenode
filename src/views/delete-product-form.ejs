@@ -15,7 +15,7 @@
     <p>Por favor complete la información requerida para modificar un producto</p>
     <div class="ccDetalleEliminarProducto mt-5 bg-white shadow p-5">
       <h3>Detalle del producto</h3>
-      <form action="/products/<%= product.productId %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+      <form action="/products/<%= product.productID %>?_method=DELETE" method="POST" enctype="multipart/form-data">
         <div class="form-row">
           <div class="form-group col-12">
             <label for="productName">ID</label>
@@ -30,13 +30,12 @@
             <input type="text" name="productDescription" id="" class="form-control" placeholder="Ej.: Este condimento tiene tal y cual cosa" value="<%= product.productDescription %>">
           </div>
           <div class="form-group col-12">
-            <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
-            <input type="file" name="productImage" class="form-control-file" id="" value="<%= product.productImage %>">
-          </div>
-          <div class="form-group col-12">
             <label for="productCategory">Categoria de producto</label>
             <input type="text" name="productCategory" id="" class="form-control" placeholder="Ej.: Picantes" value="<%= product.productCategory %>">
           </div>
+          <div class="form-group col-12">
+            <label for="productIngredients">Ingredientes</label>
+            <input type="text" name="productIngredients" id="" class="form-control" value="<%= product.productIngredients %>">          </div>
           <div class="form-group col-12">
             <label for="productPrice">Precio</label>
             <input type="text" name="productPrice" id="" class="form-control" placeholder="Ej.: 100" value="<%= product.productPrice %>">

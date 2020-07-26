@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/_head.ejs') %>
+  <title>Login - Spice Node</title>
+</head>
+
+<body>
+  <%- include('./partials/_header.ejs') %>
+  <!-- Login -->
+  <div class="container d-flex justify-content-center mt-5">
+    <form action="/users/login" method="POST" class="ccSignIn p-4 rounded bg-white shadow">
+      <h4 class="mb-4">Por favor ingresá tu usuario y contraseña</h4>
+      <div class="form-group">
+        <label for="userEmail">Mail</label>
+        <input type="email" name="userEmail" class="form-control" id="">
+      </div>
+      <div class="form-group">
+        <label for="userPassword">Contraseña</label>
+        <input type="password" name="userPassword" class="form-control" id="">
+        <small class="form-text text-muted">Nunca compartiremos la contraseña con nadie más.</small>
+      </div>
+      <div class="form-group form-check">
+        <input name="rememberMe" type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="recordame">Recordarme como usuario</label>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Ingresar</button>
+  </form>
+</div>
+
+<!-- Bootstrap scripts -->
+<%- include('./partials/_bootstrapscripts.ejs') %>
+</body>
+
+</html>

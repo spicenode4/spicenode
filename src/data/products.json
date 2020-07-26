@@ -2,10 +2,28 @@
   {
     "productID": 1,
     "productName": "Spanish Tacos",
-    "productDescription": "Condimento mediterraneo",
+    "productDescription": "Condimento español",
     "productCategory": "Picante",
-    "productIngredients": "Azucar",
+    "productIngredients": "Pimenton y sal",
     "productPrice": "100",
-    "productImage": "productImage-Spanish Tacos-1595713356043.png"
+    "productImage": "productImage-Spanish Tacos-1595731044869.png"
+  },
+  {
+    "productID": 2,
+    "productName": "Tandoori",
+    "productDescription": "Condimento hindu",
+    "productCategory": "Sabroso",
+    "productIngredients": "Curry y mas",
+    "productPrice": "100",
+    "productImage": "productImage-Tandoori-1595731112259.png"
+  },
+  {
+    "productID": 3,
+    "productName": "Chilifire",
+    "productDescription": "Un condimento picante de verdad",
+    "productCategory": "Picante",
+    "productIngredients": "Aji muy picante",
+    "productPrice": "100",
+    "productImage": "productImage-Chilifire-1595731172029.png"
   }
 ]

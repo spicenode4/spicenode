@@ -12,4 +12,6 @@ router.get('/contact', indexController.contactUs);
 router.get('/cart', indexController.cart);
 // Thank You
 router.get('/thank-you', indexController.thankYou);
+// Master
+// router.get('/master', indexController.masterMenu);
 module.exports = router;

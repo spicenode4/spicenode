@@ -99,17 +99,17 @@ const productsController = {
   },
   deleteForm: (req, res) => {
     for (let i = 0; i < productsPARSED.length; i++) {
-      if (productsPARSED[i].productId == req.params.productId) {
+      if (productsPARSED[i].productID == req.params.productId) {
         return res.render('delete-product-form', {
           product: productsPARSED[i]
         });
       }
     }
-    //! FALTA AGREGAR Q HACE SI NO ENCUENTRA NADA
+    res.send('Estas queriendo borrar algo que no se puede')
   },
   deleteProduct: (req, res) => {
     for (let i = 0; i < productsPARSED.length; i++) {
-      if (productsPARSED[i].productId == req.params.productId) {
+      if (productsPARSED[i].productID == req.params.productId) {
         productsPARSED.splice(i, 1);
         let newProductsJSON = JSON.stringify(productsPARSED)
         fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);

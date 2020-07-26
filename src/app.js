@@ -1,8 +1,9 @@
-var createError = require('http-errors');
-var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var express = require('express');
+var createError = require('http-errors');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
+app.use(session({ secret: "Hable mas fuerte que tengo una toalla" }))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

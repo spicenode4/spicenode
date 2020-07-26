@@ -1,0 +1,20 @@
+[
+  {
+    "userID": 1,
+    "userName": "Cristian",
+    "userLastName": "Coppari",
+    "userCategory": "user",
+    "userEmail": "cristian@spicenode.com",
+    "userPassword": "$2b$10$OWyRoeKIrtJM9buf.IMK7u9CtMHxrVP4Vs1JmvlpTgm.onRjYfOfu",
+    "userAvatar": "defaultUserAvatar.png"
+  },
+  {
+    "userID": 2,
+    "userName": "Cosme",
+    "userLastName": "Fulanito",
+    "userCategory": "user",
+    "userEmail": "emailfalso123@gmail.com",
+    "userPassword": "$2b$10$.JpDIl9JT3mFdmOwMW9pHe4Ns1qV5.1WnYednnCZvrzUA/fVuJZwm",
+    "userAvatar": "defaultUserAvatar.png"
+  }
+]
