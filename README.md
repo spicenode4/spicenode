@@ -9,6 +9,7 @@
 - ABM de productos
 - Log out de usuarios
 - Rutas master para chequear session y cookies
+- Falta la parte de Combos y algunos estilos CSS en el Home
 
 ## Repo GitHub
 
