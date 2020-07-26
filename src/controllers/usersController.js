@@ -6,8 +6,7 @@ const { check, validationResult, body } = require('express-validator');
 
 // 1) Leo el JSON
 // 2) Creo la variable usersPARSED
-// 3) Hago un if para ver si usersJSON esta vacío, porque sino tira un error de Object JSON Anonymous
-//    Si esta vacio le digo que es un array vacío. Si tiene algo que haga el JSON parse
+// 3) Hago un if para ver si usersJSON esta vacío, porque sino tira un error de Object JSON Anonymous. Si esta vacio le digo que es un array vacío. Si tiene algo que haga el JSON parse
 let usersJSON = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8');
 let usersPARSED;
 (usersJSON == '') ? usersPARSED = [] : usersPARSED = JSON.parse(usersJSON);
@@ -74,6 +73,11 @@ const usersController = {
         errors: errors.mapped()
       })
     }
+  },
+  userLogOut: (req, res) => {
+    req.session.destroy();
+    res.cookie('rememberMe', '', { maxAge: -1 })
+    res.send('Te deslogueaste con éxito')
   }
 }
 

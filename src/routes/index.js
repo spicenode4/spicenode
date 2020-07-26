@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const indexController = require('../controllers/indexController');
+const masterController = require('../controllers/masterController');
 
 // Pagina Home
 router.get('/', indexController.index);
@@ -12,6 +13,9 @@ router.get('/contact', indexController.contactUs);
 router.get('/cart', indexController.cart);
 // Thank You
 router.get('/thank-you', indexController.thankYou);
+
 // Master
-// router.get('/master', indexController.masterMenu);
+router.get('/check-user', masterController.checkUserSession);
+router.get('/check-cookies', masterController.checkUserCookies);
+
 module.exports = router;

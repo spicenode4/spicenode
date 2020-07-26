@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+const rememberMeMiddleware = require('./middlewares/rememerMeMiddleware');
 
 var app = express();
 
@@ -19,10 +20,11 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(session({ secret: "Si? Hable mas fuerte que tengo una toalla" }))
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
-app.use(session({ secret: "Hable mas fuerte que tengo una toalla" }))
+app.use(rememberMeMiddleware);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

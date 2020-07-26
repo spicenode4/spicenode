@@ -7,7 +7,7 @@ header .ccHeader1 {}
 header .ccHeader1 .ccSocial a i {
   color: white;
 }
-header .ccHeader1 .ccShipping p {
+header .ccHeader1 .ccShipping ul li a {
   margin: 0px;
   font-weight: 400;
   color: white;

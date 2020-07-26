@@ -1,16 +1,22 @@
 # SpiceNode
 
-# Importante!
+# UPDATES
 
-Tuvimos que crear otro repo ya que tuvimos problemas con el actual.
-Dejamos aquí la nueva URL de acceso:
+# Sprint 3:
+
+- Login de usuarios
+- Register de usuarios
+- ABM de productos
+- Log out de usuarios
+- Rutas master para chequear session y cookies
 
 ## Repo GitHub
 
 - https://github.com/spicenode4/spicenode
 
 ## Trello
-- 
+
+-
 
 ## Integrantes
 

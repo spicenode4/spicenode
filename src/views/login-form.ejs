@@ -12,6 +12,14 @@
   <div class="container d-flex justify-content-center mt-5">
     <form action="/users/login" method="POST" class="ccSignIn p-4 rounded bg-white shadow">
       <h4 class="mb-4">Por favor ingresá tu usuario y contraseña</h4>
+      <% if (typeof errors != 'undefined') { %>
+        <p style="color: red">Hubo un error:</p>
+        <ul>
+          <% for( let i = 0; i < errors.length; i++ ) { %>
+            <li><%= errors[i].msg %> </li>
+            <% } %>
+          </ul>
+          <% } %>
       <div class="form-group">
         <label for="userEmail">Mail</label>
         <input type="email" name="userEmail" class="form-control" id="">

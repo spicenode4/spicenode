@@ -76,7 +76,7 @@ const productsController = {
       for (let i = 0; i < productsPARSED.length; i++) {
         if (productsPARSED[i].productID == req.params.productId) {
           productsPARSED[i] = {
-            productID: lastProductID,
+            productID: productsPARSED[i].productID,
             productName: req.body.productName,
             productDescription: req.body.productDescription,
             productCategory: req.body.productCategory,
@@ -113,9 +113,10 @@ const productsController = {
         productsPARSED.splice(i, 1);
         let newProductsJSON = JSON.stringify(productsPARSED)
         fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
-        res.redirect('/');
+        return res.redirect('/');
       }
     }
+    res.send('Error de delete product')
   }
 }
 
