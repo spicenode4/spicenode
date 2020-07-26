@@ -3,6 +3,7 @@ var router = express.Router();
 const productsController = require('../controllers/productsController');
 const uploadProduct = require('../middlewares/multerUploadProduct');
 const productValidation = require('../validations/productValidation');
+const modifyProductValidation = require('../validations/modifyProductValidation');
 
 // 1 - Listado de productos
 router.get('/', productsController.index);

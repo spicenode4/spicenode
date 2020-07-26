@@ -64,18 +64,20 @@ const productsController = {
     res.send('Estás queriendo editar un producto que no existe')
   },
   updateProduct: (req, res, next) => {
+    let errors = validationResult(req);
+    return res.send(errors);
     for (let i = 0; i < productsPARSED.length; i++) {
       if (productsPARSED[i].productID == req.params.productId) {
         productsPARSED[i] = {
-          productId: req.body.productId,
+          productID: lastProductID,
           productName: req.body.productName,
           productDescription: req.body.productDescription,
-          productImage: req.files[0].filename,
           productCategory: req.body.productCategory,
-          productPrice: req.body.productPrice
+          productIngredients: req.body.productIngredients,
+          productPrice: req.body.productPrice,
+          productImage: (req.files[0] != undefined) ? req.files[0].filename : 'defaultProductAvatar.png'
         }
         console.log(req.body)
-        //! Aca le digo que le asigne a products en la posicion i lo que ponga en req.body
         let newProductsJSON = JSON.stringify(productsPARSED)
         fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
         res.redirect('/');
