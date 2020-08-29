@@ -1,1 +1,29 @@
-[{"productID":1,"productName":"Producto 1M","productDescription":"D producto 1M","productCategory":"C producto 1M","productIngredients":"I producto 1M","productPrice":"100M","productImage":"productImage-Producto 1M-1595775332915.png"},{"productID":2,"productName":"Producto 2","productDescription":"D producto 2","productCategory":"C producto 2","productIngredients":"I producto 2","productPrice":"100","productImage":"productImage-Producto 2-1595775157029.png"},{"productID":3,"productName":"Producto 3","productDescription":"D producto 3","productCategory":"C producto 3","productIngredients":"I producto 3","productPrice":"100","productImage":"productImage-Producto 3-1595775197839.png"}]
+[
+    {
+        "productID": 1,
+        "productName": "Producto 1M",
+        "productDescription": "D producto 1M",
+        "productCategory": "C producto 1M",
+        "productIngredients": "I producto 1M",
+        "productPrice": "100M",
+        "productImage": "productImage-Producto 1M-1595775332915.png"
+    },
+    {
+        "productID": 2,
+        "productName": "Producto 2",
+        "productDescription": "D producto 2",
+        "productCategory": "C producto 2",
+        "productIngredients": "I producto 2",
+        "productPrice": "100",
+        "productImage": "productImage-Producto 2-1595775157029.png"
+    },
+    {
+        "productID": 3,
+        "productName": "Producto 3",
+        "productDescription": "D producto 3",
+        "productCategory": "C producto 3",
+        "productIngredients": "I producto 3",
+        "productPrice": "100",
+        "productImage": "productImage-Producto 3-1595775197839.png"
+    }
+]
