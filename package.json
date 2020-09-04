@@ -15,15 +15,13 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.6.1",
     "http-errors": "~1.6.3",
-    "jquery": "^3.5.1",
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
     "multer": "^1.4.2",
-<<<<<<< HEAD
-    "popper.js": "^1.16.1"
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.12",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-less": "^4.0.1",
@@ -31,11 +29,5 @@
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
     "gulp-uglifycss": "^1.1.0"
-=======
-    "mysql2": "^2.1.0",
-    "nodemon": "^2.0.4",
-    "sequelize": "^6.3.4",
-    "sequelize-cli": "^6.2.0"
->>>>>>> 5e6d2cddca2537eb36f57d867c4eea44cc780a6b
   }
 }
