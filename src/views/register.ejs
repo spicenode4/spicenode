@@ -8,15 +8,15 @@
 </head>
 
 <body>
-  <%- include('./partials/_header.ejs') %>
+  <%- include('./partials/_navBar.ejs') %>
   
   <!-- Formulario de registro -->
   <div class="ccMasterRegister">
-    <div class="ccFormularioRegistroUsuario container d-flex flex-wrap flex-column align-items-center">
-      <h2 class="pt-5">Bienvenido a Spice Node</h2>
-      <p>Por favor complete la información requerida para completar tu registro</p>
+    <div class="loginForm container d-flex flex-wrap flex-column align-items-center">
+      <h2 class="heading-secondary pt-5">Bienvenido a Spice Node</h2>
+      <p>Por favor complete la información requerida para continuar</p>
       <div class="ccDetalleRegistroUsuario mt-5 bg-white shadow p-5">
-        <h3>Informacion personal</h3>
+        <h3 class="heading-tertiary">Informacion personal</h3>
         <form action="/users/register" method="POST" enctype="multipart/form-data">
           <div class="form-row">
             <div class="form-group col-12">
@@ -45,7 +45,7 @@
               <input type="file" name="userAvatar" id="inputUserAvatar" class="form-control" placeholder="No se que va acá">
             </div>
           </div>
-          <button type="submit" class="btn btn-success btn-sm">Confirmar registro</button>
+          <button type="submit" class="btn btn-success btn-sm w-100">Confirmar registro</button>
         </form>
       </div>
     </div>

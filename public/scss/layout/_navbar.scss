@@ -1,0 +1,9 @@
+.navbar {
+  //height: 15vh;
+  > div.container {
+    justify-content: space-around;
+  }
+  &-collapse {
+    justify-content: space-evenly;
+  }
+}

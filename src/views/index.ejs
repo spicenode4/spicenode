@@ -2,52 +2,91 @@
 
 <html>
 
-  <head>
-    <%- include('./partials/_head.ejs') %> 
-    <title>Home - Spice Node</title>
-  </head>
+<head>
+  <%- include('./partials/_head.ejs') %>
+  <title>Home - Spice Node</title>
+</head>
 
-  <body>
-    <!-- Header -->
-    <%- include('./partials/_header.ejs') %>
+<body>
+  <!-- NavBar -->
+  <%- include('./partials/_navBar.ejs') %>
 
-    <!-- Main -->
-    <main class="ccIndexMaster bg-ligth">
-      <section class="ccProductos container shadow py-4 px-5 bg-white">
-        <h2>Nuestros productos</h2>
-        <div class="row">
-          <% for( let i = 0; i < products.length; i++ ) { %>
-            <div class="col-6 col-lg-4">
-            <div class="ccProductBox d-flex flex-wrap flex-column align-items-center">
-              <a href="/products/<%= products[i].productId %> "><img src="/uploads/productsImages/<%= products[i].productImage %>" alt="<%= products[i].productName%>"></a>
-              <h3><%= products[i].productName %></h3>
-              <p><%= products[i].productDescription %></p>
-              <p class="ccPrecio"><%= products[i].productPrice %></p>
-            </div>
-          </div>
-          <% } %>
+  <!-- Header -->
+  <header class="header d-flex justify-content-center align-items-center">
+    <div class="header__text-box">
+      <h1 class="heading-header">
+        <span class="heading-header--main">Spice Node</span>
+        <span class="heading-header--sub">Condimentos naturales</span>
+      </h1>
+    </div>
+  </header>
+
+  <!-- Cards -->
+  <section class="cardContainer container py-5 px-0">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="info-card">
+          <i class="info-card__icon--1 fas fa-credit-card"></i>
+          <h4 class="info-card__heading">Varios medios de pago</h4>
+          <p class="info-card__info">Tarjeta de crédito, ApplePay, BitCoins y más.</p>
         </div>
-      </section>
+      </div>
+      <div class="col-12 col-md-4 my-xs-5">
+        <div class="info-card">
+          <i class="info-card__icon--2 fas fa-weight"></i>
+          <h4 class="info-card__heading">0 calorias, todo el sabor</h4>
+          <p class="info-card__info">Come ricor rico y sano ahora no es imposible.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="info-card">
+          <i class="info-card__icon--3 fas fa-leaf"></i>
+          <h4 class="info-card__heading">Ingredientes naturales</h4>
+          <p class="info-card__info">Solo materia prima de primer calidad en nuestros productos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section class="ccCombos container shadow py-4 px-5 bg-white">
-        <h2>Nuestros Combos</h2>
-        <div class="row">
-          <div class="col-6 col-lg-4">
-            <div class="ccComboBox d-flex flex-wrap flex-column align-items-center">
-              <a href="/products/2"><img src="/images/combo1.png" alt="combo_1"></a>
-              <h3>Bayou Cajun</h3>
-              <p>Lorem, ipsum dolor.</p>
-              <p class="ccPrecio">$200</p>
-            </div>
+  <!-- Main -->
+  <main class="indexMain bg-ligth">
+    <section class="products container shadow py-4 px-5 bg-white rounded d-flex flex-wrap flex-direction-column justify-content-center">
+      <h2 class="heading-secondary text-center">Nuestros <span class="orangeRed">Productos</span></h2>
+      <div class="row">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+        <div class="col-12 col-lg-4">
+          <div class="products__info-box d-flex flex-wrap flex-column align-items-center">
+            <a href="/products/<%= products[i].productId %> "><img class="products__img" src="/uploads/productsImages/<%= products[i].productImage %>" alt="<%= products[i].productName%>"></a>
+            <h3 class="heading-tertiary"><%= products[i].productName %></h3>
+            <p class="products__info-box__description"><%= products[i].productDescription %></p>
+            <p class="products__info-box__price"><%= products[i].productPrice %></p>
           </div>
         </div>
-      </section>
-    </main>
+        <% } %>
+      </div>
+    </section>
 
+    <section class="products container shadow py-4 px-5 bg-white rounded">
+      <h2 class="heading-secondary">Nuestros <span class="greenYellow">Combos</span></h2>
+      <div class="row">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+        <div class="col-12 col-lg-4">
+          <div class="products__info-box d-flex flex-wrap flex-column align-items-center">
+            <a href="/products/<%= products[i].productId %> "><img class="products__img" src="/uploads/productsImages/<%= products[i].productImage %>" alt="<%= products[i].productName%>"></a>
+            <h3 class="heading-tertiary"><%= products[i].productName %></h3>
+            <p class="products__info-box__description"><%= products[i].productDescription %></p>
+            <p class="products__info-box__price"><%= products[i].productPrice %></p>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </section>
+  </main>
 
-    <!-- Footer -->
-    <%- include('./partials/_footer.ejs') %> 
-    <!-- BSC -->
-  </body>
+  <!-- Footer -->
+  <%- include('./partials/_footer.ejs') %>
+  <!-- BSC -->
+  <%- include('./partials/_bootstrapscripts.ejs') %>
+</body>
 
 </html>

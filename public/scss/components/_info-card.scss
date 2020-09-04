@@ -1,0 +1,76 @@
+.info-card {
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 5px 10px 10px rgba($color-grey-dark, 0.4);
+  transition: all 0.2s;
+  background-color: $color-white;
+  padding: 3rem;
+
+  &__icon--1 {
+    @include cardColors($color-red, $color-orange);
+  }
+
+  &__icon--2 {
+    @include cardColors($color-primary, $color-primary-light);
+  }
+
+  &__icon--3 {
+    @include cardColors($color-green-light, $color-green-dark);
+  }
+
+  &__heading {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__info {
+    color: $color-grey-dark;
+  }
+
+  @include media-breakpoint-up(md) {
+    &__icon--1,
+    &__icon--2,
+    &__icon--3 {
+      color: $color-grey-dark;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      .info-card__icon {
+        &--1 {
+          background-image: linear-gradient(
+            to right,
+            $color-red,
+            $color-orange
+          );
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+
+        &--2 {
+          background-image: linear-gradient(
+            to right,
+            $color-primary,
+            $color-primary-light
+          );
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+
+        &--3 {
+          background-image: linear-gradient(
+            to right,
+            $color-green-light,
+            $color-green-dark
+          );
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+        }
+      }
+    }
+  }
+}

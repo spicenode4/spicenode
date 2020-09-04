@@ -12,7 +12,7 @@
   padding-bottom: 100px;
 }
 
-.datos-contacto{
+.datos-contacto {
   padding: 30px 30px;
   text-align: center;
 }
@@ -21,17 +21,17 @@
   text-decoration: underline;
 }
 
-hr{
+hr {
   width: 30%;
   margin: 20px auto;
 }
 
-.formularioContacto{
-  width: 50%;
+.formularioContacto {
+  width: 80%;
   margin: 0 auto;
 }
 
-.botonEnviar{
+.botonEnviar {
   background-color: #ffc60a;
   color: black;
   border-color: #ffc60a;

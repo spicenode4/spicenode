@@ -9,23 +9,29 @@
 
 <body>
   <!-- Header -->
-  <%- include('./partials/_header.ejs') %>
+  <%- include('./partials/_navBar.ejs') %>
 
-  <div class="contacto-portada">
-    <h1 class="">Contactate</h1>
-  </div>
+  <header class="header d-flex justify-content-center align-items-center">
+    <div class="header__text-box">
+      <h1 class="heading-header">
+        <span class="heading-header--main">Contacto</span>
+      </h1>
+    </div>
+  </header>
 
-  <div class="container bg-white shadow p-5 mt-5 rounded">
-    <div class="datos-contacto">
-      <h2>¿Tenés una consulta? Envianos un mail.</h2>
-      <p><a href="mailto:spicenode4@gmail.com">spicenode4@gmail.com</a></p>
+  <h2 class="heading-secondary">Contactate con nosotros</h2>
+
+  <div class="contact container-sm bg-white shadow p-5 mt-5 rounded">
+    <div class="contact__info">
+      <h3 class="heading-tertiary text-center">¿Tenés una consulta? Envianos un mail.</h3>
+      <p class="text-center"><a href="mailto:spicenode4@gmail.com">spicenode4@gmail.com</a></p>
       <hr>
       <h6>Av. Siempre Viva 1234, Springfield</h6>
     </div>
     <!-- Formulario de Contacto-->
-    <div class="formularioContacto">
+    <div class="contact__form">
       <form>
-        <div class="form-group contactoForm">
+        <div class="form-group">
           <label for="contactName">Nombre</label>
           <input type="text" name="contactName" class="form-control" id="">
         </div>

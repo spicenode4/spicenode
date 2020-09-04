@@ -7,11 +7,11 @@
 </head>
 
 <body>
-  <%- include('./partials/_header.ejs') %>
+  <%- include('./partials/_navBar.ejs') %>
   <!-- Login -->
-  <div class="container d-flex justify-content-center mt-5">
+  <div class="loginForm container d-flex justify-content-center mt-5">
     <form action="/users/login" method="POST" class="ccSignIn p-4 rounded bg-white shadow">
-      <h4 class="mb-4">Por favor ingresá tu usuario y contraseña</h4>
+      <h4 class="heading-secondary mb-4">Por favor ingresá tu usuario y contraseña</h4>
       <% if (typeof errors != 'undefined') { %>
         <p style="color: red">Hubo un error:</p>
         <ul>

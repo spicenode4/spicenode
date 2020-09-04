@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap");
+
+.navbar {
+  &-nav {
+    .nav-link {
+      color: $color-black;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      &:hover {
+        color: lighten($color-black, 70%);
+      }
+    }
+    &--primary {
+      @include media-breakpoint-up(md) {
+        .nav-link {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+.heading-secondary {
+  font-family: "DM Serif Text", "Helvetica", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.heading-secondary-1 {
+  font-family: "DM Serif Text", "Helvetica", sans-serif;
+  font-size: 2.5rem;
+}
+
+.heading-tertiary {
+  font-family: "Lato", "Helvetica", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.orangeRed {
+  background-image: linear-gradient(to right, $color-red, $color-primary);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.greenYellow {
+  background-image: linear-gradient(to right, $color-green, $color-green-dark);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}

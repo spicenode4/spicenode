@@ -8,26 +8,26 @@
 
 <body>
   <!-- Header -->
-  <%- include('./partials/_header.ejs') %>
+  <%- include('./partials/_navBar.ejs') %>
 
   <!-- Producto Individual -->
   <main class="my-5">
     <div class="container">
-      <div class="row shadow py-5 bg-white">
-        <div class="col-12 col-lg-6">
+      <div class="product row shadow py-5 bg-white">
+        <div class="col-12 col-lg-6 px-5">
           <img class="mw-100" src="/uploads/productsImages/<%= product.productImage %> " alt="<%= product.productName %> ">
         </div>
         <div class="col-12 col-lg-6 p-5">
-          <section class="ccInfoProducto">
-            <h1 class="border-bottom pb-2"><%= product.productName %> </h1>
+          <section class="product__info">
+            <h1 class="heading-secondary-1 border-bottom pb-2"><%= product.productName %> </h1>
             <p><%= product.productDescription %></p>
             <p class="mt-3"><%= product.productPrice %> </p>
-            <article class="ccIngredientes my-3">
-              <h4 class="my-2">Ingredientes</h4>
+            <article class="product__ingredients my-3">
+              <h4 class="heading-tertiary my-2">Ingredientes</h4>
               <p><%= product.productIngredients %> </p>
             </article>
-            <article class="ccUsosSugeridos my-3">
-              <h4 class="my-2">Usos sugeridos</h4>
+            <article class="product__suggestedUses my-3">
+              <h4 class="heading-tertiary my-2">Usos sugeridos</h4>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, facilis.</p>
             </article>
             <a href="/cart"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
@@ -39,15 +39,16 @@
     </div>
   </main>
   <!-- Productos relacionados -->
-  <section class="ccProductosRelacionados">
+  <section class="relatedProducts">
     <div id="carouselExampleInterval" class="carousel slide shadow-lg bg-white" data-ride="carousel">
       <div class="carousel-inner">
-        <h2 class="mt-5">Probá también...</h2>
+        <h2 class="heading-secondary mt-5">Probá también...</h2>
         <div class="carousel-item active" data-interval="false">
           <div class="container my-5">
             <div class="row">
+              <% for( let i = 0; i < 3; i++ ) { %>
               <div class="col-6 col-md-4">
-                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
+                <section class="relatedProducts__relatedProduct d-flex flex-wrap flex-column align-items-center">
                   <img src="/images/cajun.png" alt="cajun">
                   <h3>Tandoor</h3>
                   <p class="my-1">Lorem, ipsum dolor.</p>
@@ -55,32 +56,16 @@
                   <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
                 </section>
               </div>
-              <div class="col-6 col-md-4">
-                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
-                  <img src="/images/cajun.png" alt="">
-                  <h3>Tandoor</h3>
-                  <p class="my-1">Lorem, ipsum dolor.</p>
-                  <p>$100</p>
-                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
-                </section>
-              </div>
-              <div class="col-6 col-md-4">
-                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
-                  <img src="/images/cajun.png" alt="">
-                  <h3>Tandoor</h3>
-                  <p class="my-1">Lorem, ipsum dolor.</p>
-                  <p>$100</p>
-                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
-                </section>
-              </div>
+              <% } %>
             </div>
           </div>
         </div>
         <div class="carousel-item" data-interval="false">
           <div class="container my-5">
             <div class="row">
+            <% for( let i = 0; i < 3; i++ ) { %>
               <div class="col-6 col-md-4">
-                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
+                <section class="relatedProducts__relatedProduct d-flex flex-wrap flex-column align-items-center">
                   <img src="/images/cajun.png" alt="cajun">
                   <h3>Tandoor</h3>
                   <p class="my-1">Lorem, ipsum dolor.</p>
@@ -88,24 +73,7 @@
                   <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
                 </section>
               </div>
-              <div class="col-6 col-md-4">
-                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
-                  <img src="/images/cajun.png" alt="">
-                  <h3>Tandoor</h3>
-                  <p class="my-1">Lorem, ipsum dolor.</p>
-                  <p>$100</p>
-                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
-                </section>
-              </div>
-              <div class="col-6 col-md-4">
-                <section class="ccProductoRelacionado d-flex flex-wrap flex-column align-items-center">
-                  <img src="/images/cajun.png" alt="">
-                  <h3>Tandoor</h3>
-                  <p class="my-1">Lorem, ipsum dolor.</p>
-                  <p>$100</p>
-                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
-                </section>
-              </div>
+              <% } %>
             </div>
           </div>
         </div>

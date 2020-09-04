@@ -8,37 +8,47 @@
 
 <body>
   <!-- Header -->
-  <%- include('./partials/_header.ejs') %> 
-  
+  <%- include('./partials/_navBar.ejs') %>
+
+  <header class="header d-flex justify-content-center align-items-center">
+    <div class="header__text-box">
+      <h1 class="heading-header">
+        <span class="heading-header--main">Productos</span>
+      </h1>
+    </div>
+  </header>
+
   <!-- Main -->
-  <main class="ccAllProductsMain bg-ligth">
-    <section class="ccProductos container shadow py-4 px-5 bg-white">
-      <h2>Presentación individual</h2>
+  <main class="indexMain bg-ligth">
+    <section class="products container shadow py-4 px-5 bg-white rounder d-flex flex-wrap flex-direction-column justify-content-center">
+      <h2 class="heading-secondary text-center">Presentación individual</h2>
       <div class="row">
         <% for( let i = 0; i < products.length; i++ ) { %>
-          <div class="col-6 col-lg-4">
-          <div class="ccProductBox d-flex flex-wrap flex-column align-items-center">
-            <a href="/products/<%= products[i].productID %>"><img src="/uploads/productsImages/<%= products[i].productImage %>" alt="<%= products[i].productName%>"></a>
-            <h3><%= products[i].productName %></h3>
-            <p><%= products[i].productDescription %></p>
-            <p class="ccPrecio"><%= products[i].productPrice %></p>
+          <div class="col-12 col-lg-4">
+          <div class="products__info-box d-flex flex-wrap flex-column align-items-center">
+            <a href="/products/<%= products[i].productID %>"><img class="products__img" src="/uploads/productsImages/<%= products[i].productImage %>" alt="<%= products[i].productName%>"></a>
+            <h3 class="heading-tertiary"><%= products[i].productName %></h3>
+            <p class="products__info-box__description"><%= products[i].productDescription %></p>
+            <p class="products__info-box__price"><%= products[i].productPrice %></p>
           </div>
         </div>
         <% } %>
       </div>
     </section>
 
-    <section class="ccCombos container shadow py-4 px-5 bg-white">
-      <h2>Nuestros combos</h2>
+    <section class="products container shadow py-4 px-5 bg-white rounder d-flex flex-wrap flex-direction-column justify-content-center">
+      <h2 class="heading-secondary text-center">Combos</h2>
       <div class="row">
-        <div class="col-6 col-lg-4">
-          <div class="ccComboBox d-flex flex-wrap flex-column align-items-center">
-            <img src="/images/combo1.png" alt="combo_1">
-            <h3>Bayou Cajun</h3>
-            <p>Lorem, ipsum dolor.</p>
-            <p class="ccPrecio">$200</p>
+        <% for( let i = 0; i < products.length; i++ ) { %>
+          <div class="col-12 col-lg-4">
+          <div class="products__info-box d-flex flex-wrap flex-column align-items-center">
+            <a href="/products/<%= products[i].productID %>"><img class="products__img" src="/uploads/productsImages/<%= products[i].productImage %>" alt="<%= products[i].productName%>"></a>
+            <h3 class="heading-tertiary"><%= products[i].productName %></h3>
+            <p class="products__info-box__description"><%= products[i].productDescription %></p>
+            <p class="products__info-box__price"><%= products[i].productPrice %></p>
           </div>
         </div>
+        <% } %>
       </div>
     </section>
   </main>

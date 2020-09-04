@@ -1,0 +1,9 @@
+// Card Mixin
+
+@mixin cardColors($color1, $color2) {
+  background-image: linear-gradient(to right, $color1, $color2);
+  font-size: 4rem;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}

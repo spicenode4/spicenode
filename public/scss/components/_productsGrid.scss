@@ -1,0 +1,14 @@
+.products {
+  &__info-box {
+    &__description {
+      font-weight: 300;
+    }
+    &__price {
+      font-weight: 700;
+      color: $color-green-dark;
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+}

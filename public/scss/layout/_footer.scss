@@ -1,0 +1,29 @@
+.footer {
+  background-color: black;
+  padding: 5rem 0;
+
+  &__heading {
+    color: $color-white;
+    font-family: "DM Serif Text", "Helvetica", sans-serif;
+    font-size: 5rem;
+  }
+
+  &__nav {
+    a {
+      color: $color-white;
+      font-weight: 300;
+    }
+    text-transform: uppercase;
+    &__1 {
+      color: $color-white;
+      list-style-type: none;
+    }
+    &__2 {
+      list-style-type: none;
+    }
+  }
+
+  &__2 {
+    text-align: center;
+  }
+}
