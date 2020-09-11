@@ -3,6 +3,9 @@ var router = express.Router();
 const indexController = require('../controllers/indexController');
 const masterController = require('../controllers/masterController');
 
+
+router.get('/pruebasql', indexController.pruebaSql);
+
 // Pagina Home
 router.get('/', indexController.index);
 // About
