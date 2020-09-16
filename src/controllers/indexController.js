@@ -25,13 +25,43 @@ const indexController = {
       res.render('thank-you')
    },
    pruebaSql: (req, res) => {
-      db.products.findAll(
+      db.Product.findAll(
          {
             include: {
                all: true
             }
          }
       )
+         .then(function (result) {
+            return res.send(result)
+         })
+   },
+   pruebaUsuarios: (req, res) => {
+      db.users.findAll({
+         include: {
+            all: true
+         }
+      })
+         .then(function (result) {
+            return res.send(result)
+         })
+   },
+   pruebaCategorias: (req, res) => {
+      db.Category.findAll({
+         include: {
+            all: true
+         }
+      })
+         .then(function (result) {
+            return res.send(result)
+         })
+   },
+   pruebaIngredientes: (req, res) => {
+      db.Ingredient.findAll({
+         include: {
+            all: true
+         }
+      })
          .then(function (result) {
             return res.send(result)
          })

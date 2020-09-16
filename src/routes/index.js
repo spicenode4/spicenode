@@ -3,8 +3,15 @@ var router = express.Router();
 const indexController = require('../controllers/indexController');
 const masterController = require('../controllers/masterController');
 
-
+//<---------------PRUEBAS DE SEQUELIZE------------------>//
+//Todos los productos
 router.get('/pruebasql', indexController.pruebaSql);
+//Todos las categorías
+router.get('/pruebaCategorias', indexController.pruebaCategorias)
+//Todos las ingredientes
+router.get('/pruebaingredientes', indexController.pruebaIngredientes)
+//Aquí podemos ver los usuarios
+router.get('/pruebaUsuarios', indexController.pruebaUsuarios);
 
 // Pagina Home
 router.get('/', indexController.index);

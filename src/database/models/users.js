@@ -3,7 +3,7 @@ module.exports = function (sequelize, dataTypes) {
    let alias = "users";
 
    let cols = {
-      userId: {
+      id: {
          type: dataTypes.INTEGER.UNSIGNED,
          primaryKey: true,
          autoIncrement: true,
