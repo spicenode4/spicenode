@@ -6,6 +6,7 @@ const masterController = require('../controllers/masterController');
 //<---------------PRUEBAS DE SEQUELIZE------------------>//
 //Todos los productos
 router.get('/pruebasql', indexController.pruebaSql);
+router.post('/pruebasqlformulario', indexController.pruebaSqlFormulario);
 //Todos las categorías
 router.get('/pruebaCategorias', indexController.pruebaCategorias)
 //Todos las ingredientes

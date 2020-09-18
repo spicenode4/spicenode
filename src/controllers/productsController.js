@@ -30,12 +30,12 @@ const productsController = {
    },
    create: (req, res, next) => {
       db.Product.create({
-         productName: req.body.productName,
-         productDescription: req.body.productDescription,
+         name: req.body.productName,
+         description: req.body.productDescription,
          productCategoryId: req.body.productCategoryId,
          productIngredients: req.body.productIngredients,
          productPrice: req.body.productPrice,
-         productImage: 'lala.png'
+         productImage: req.files.filename
       });
    },
    detail: (req, res) => {

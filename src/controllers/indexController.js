@@ -32,8 +32,9 @@ const indexController = {
             }
          }
       )
-         .then(function (result) {
-            return res.send(result)
+         .then(function (products) {
+            return res.render('pruebasql', { products: products })
+            /* return res.send(products) */
          })
    },
    pruebaUsuarios: (req, res) => {
@@ -55,6 +56,9 @@ const indexController = {
          .then(function (result) {
             return res.send(result)
          })
+         .catch(function (error) {
+            return res.send(error)
+         })
    },
    pruebaIngredientes: (req, res) => {
       db.Ingredient.findAll({
@@ -65,6 +69,9 @@ const indexController = {
          .then(function (result) {
             return res.send(result)
          })
+   },
+   pruebaSqlFormulario: (req, res) => {
+      res.send(req.body)
    }
 }
 

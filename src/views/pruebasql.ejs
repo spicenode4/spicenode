@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+
+   <form action="/pruebasqlformulario" method="POST">
+
+      <label for="nombre">nombre</label>
+      <input type="text" name="nombre" value="<%= products[0].name %> " id="">
+      <label for="nombre">precio</label>
+      <input type="text" name="precio" value="<%= products[0].price %>" id="">
+      <label for="nombre">category</label>
+      <input type="text" name="category" value="<%= products[0].Category.name %>" id="">
+
+      <% for (let i = 0; i < products[0].Ingredientes.length; i++) { %>
+
+      <label for="ingredients"><%= products[0].Ingredientes[i].name %></label>
+      <input type="checkbox" name="ingredients" value="<%= products[0].Ingredientes[i].name %>" id="">
+
+      <% } %>
+
+      <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
+      <input type="file" name="productImage" class="form-control-file" id="">
+
+      <button type="submit">ENVIAR</button>
+   </form>
+
+</body>
+
+</html>
