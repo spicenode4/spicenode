@@ -3,6 +3,7 @@ const path = require('path');
 let db = require('../database/models');
 
 const { check, validationResult, body } = require('express-validator');
+const { parse } = require('path');
 
 let productsJSON = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf-8');
 let productsPARSED;
@@ -22,21 +23,33 @@ const productsController = {
       })
    },
    uploadForm: (req, res) => {
+      let Category;
       db.Category.findAll()
          .then(function (Category) {
-            res.render('product-upload-form', { Category: Category });
+            db.Ingredient.findAll()
+               .then(function (Ingredient) {
+                  res.render('product-upload-form', { Category: Category, Ingredient: Ingredient })
+                  /* res.json({ Category: Category, Ingredient: Ingredient }) */
+               })
          })
 
    },
    create: (req, res, next) => {
+
       db.Product.create({
-         name: req.body.productName,
-         description: req.body.productDescription,
-         productCategoryId: req.body.productCategoryId,
-         productIngredients: req.body.productIngredients,
-         productPrice: req.body.productPrice,
-         productImage: req.files.filename
-      });
+         name: req.body.name,
+         description: req.body.description,
+         category_id: req.body.category,
+         price: req.body.price,
+         image: "Juan el cartero"
+      }).then(function (result) {
+         req.body.ingredients.forEach(elemento => {
+            db.ProductsIngredients.create({
+               product_id: result.id,
+               ingredient_id: parseInt(elemento)
+            })
+         });
+      })
    },
    detail: (req, res) => {
       for (let i = 0; i < productsPARSED.length; i++) {

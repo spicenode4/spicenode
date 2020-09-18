@@ -15,9 +15,6 @@ module.exports = function (sequelize, dataTypes) {
       category_id: {
          type: dataTypes.INTEGER
       },
-      ingredient_id: {
-         type: dataTypes.INTEGER
-      },
       price: {
          type: dataTypes.INTEGER
       },

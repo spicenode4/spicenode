@@ -33,8 +33,8 @@ const indexController = {
          }
       )
          .then(function (products) {
-            return res.render('pruebasql', { products: products })
-            /* return res.send(products) */
+
+            return res.send(products)
          })
    },
    pruebaUsuarios: (req, res) => {
