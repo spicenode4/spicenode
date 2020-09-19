@@ -70,22 +70,6 @@ const productsController = {
          res.send(result)
       })
 
-
-      /*   db.Product.create({
-           name: req.body.name,
-           description: req.body.description,
-           category_id: req.body.category,
-           price: req.body.price,
-           image: "Juan el cartero"
-        }).then(function (result) {
-           req.body.ingredients.forEach(elemento => {
-              db.ProductsIngredients.create({
-                 product_id: result.id,
-                 ingredient_id: parseInt(elemento)
-              })
-           });
-        }) */
-
    },
    updateProduct: (req, res, next) => {
       let productToModify;
