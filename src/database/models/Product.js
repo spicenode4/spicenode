@@ -22,7 +22,7 @@ module.exports = function (sequelize, dataTypes) {
          type: dataTypes.STRING(500)
       },
       image: {
-         type: dataTypes.STRING(255)
+         type: dataTypes.STRING(500)
       },
 
    }

@@ -36,13 +36,13 @@ const productsController = {
 
    },
    create: (req, res, next) => {
-
       db.Product.create({
+
          name: req.body.name,
          description: req.body.description,
          category_id: req.body.category,
          price: req.body.price,
-         image: "Juan el cartero"
+         image: req.files[0].filename
       }).then(function (result) {
          req.body.ingredients.forEach(elemento => {
             db.ProductsIngredients.create({

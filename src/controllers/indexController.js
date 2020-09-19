@@ -8,9 +8,14 @@ let productsPARSED;
 
 const indexController = {
    index: (req, res) => {
-      res.render('index', {
-         products: productsPARSED
-      });
+      db.Product.findAll({
+         include: {
+            all: true
+         }
+      })
+         .then(function (product) {
+            res.render('index', { products: product })
+         })
    },
    aboutUs: (req, res) => {
       res.render('about')
