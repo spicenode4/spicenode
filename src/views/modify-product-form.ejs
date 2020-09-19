@@ -2,59 +2,103 @@
 <html lang="en">
 
 <head>
-  <%- include('./partials/_head.ejs') %> 
-  <title>Modificar Producto - Spice Node</title>
+   <%- include('./partials/_head.ejs') %>
+   <title>Modificar Producto - Spice Node</title>
 </head>
 
 <body>
-  <%- include('./partials/_header.ejs') %>
+   <%- include('./partials/_header.ejs') %>
 
-  <!-- Formulario de modificacion de productos -->
-  <div class="ccFormularioModificar container d-flex flex-wrap flex-column align-items-center">
-    <h2 class="pt-5">Modificar un producto</h2>
-    <p>Por favor complete la información requerida para modificar un producto</p>
-    <div class="ccDetalleModificarProducto mt-5 bg-white shadow p-5">
-      <h3>Detalle del producto</h3>
-      <form action="/products/<%= product.productID %>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <div class="form-row">
-          <div class="form-group col-12">
-            <label for="productName">Nombre del producto</label>
-            <input type="text" name="productName" id="" class="form-control" value="<%= product.productName %>">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productName) ? errors.productName.msg : '' %></small>
-          </div>
-          <div class="form-group col-12">
-            <label for="productDescription">Descripcion</label>
-            <input type="text" name="productDescription" id="" class="form-control" value="<%= product.productDescription %>">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productDescription) ? errors.productDescription.msg : '' %></small>
-          </div>
-          <div class="form-group col-12">
-            <label for="productCategory">Categoria de producto</label>
-            <input type="text" name="productCategory" id="" class="form-control" value="<%= product.productCategory %>">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productCategory) ? errors.productCategory.msg : '' %></small>
-          </div>
-          <div class="form-group col-12">
-            <label for="productPrice">Precio</label>
-            <input type="text" name="productPrice" id="" class="form-control" value="<%= product.productPrice %>">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productPrice) ? errors.productPrice.msg : '' %></small>
-          </div>
-          <div class="form-group col-12">
-            <label for="productIngredients">Ingredientes</label>
-            <input type="text" name="productIngredients" id="" class="form-control" value="<%= product.productIngredients %>">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productIngredients) ? errors.productIngredients.msg : '' %></small>
-            <small><p>Ingresar los ingredientes separados por comas</p></small>
-          </div>
-          <div class="form-group col-12">
-            <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
-            <input type="file" name="productImage" class="form-control-file" id="">
-            <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productImage) ? errors.productImage.msg : '' %></small>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-success btn-sm">Modificar producto</button>
-      </form>
-    </div>
-  </div>
+   <!-- Formulario de modificacion de productos -->
+   <div class="ccFormularioModificar container d-flex flex-wrap flex-column align-items-center">
+      <h2 class="pt-5">Modificar un producto</h2>
+      <p>Por favor complete la información requerida para modificar un producto</p>
+      <div class="ccDetalleModificarProducto mt-5 bg-white shadow p-5">
+         <h3>Detalle del producto</h3>
+         <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+               <div class="form-group col-12">
+                  <label for="productName">Nombre del producto</label>
+                  <input type="text" name="productName" id="" class="form-control" value="<%= product.name %>">
+                  <small
+                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productName) ? errors.productName.msg : '' %></small>
+               </div>
+               <div class="form-group col-12">
+                  <label for="productDescription">Descripcion</label>
+                  <input type="text" name="productDescription" id="" class="form-control"
+                     value="<%= product.description %>">
+                  <small
+                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productDescription) ? errors.productDescription.msg : '' %></small>
+               </div>
+               <div class="form-group col-12">
+                  <label for="productCategory">Categoria de producto</label>
+                  <input type="text" name="productCategory" id="" class="form-control"
+                     value="<%= product.Category.name %>">
+                  <small
+                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productCategory) ? errors.productCategory.msg : '' %></small>
+               </div>
+               <div>
+                  <label for="">Categoría</label>
+                  <select name="category">
+                     <option value="">Elige una nueva categoría</option>
+                     <% for (let i = 0; i < categories.length; i++){ %>
+                     <option value="<%= categories[i].id %>  ">
+                        <%= categories[i].name %>
+                     </option>
+                     <% } %>
+                  </select>
+                  <small
+                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productcategories) ? errors.productcategories.msg : '' %></small>
+               </div>
+               <div class="form-group col-12">
+                  <label for="productPrice">Precio</label>
+                  <input type="text" name="productPrice" id="" class="form-control" value="<%= product.price %>">
+                  <small
+                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productPrice) ? errors.productPrice.msg : '' %></small>
+               </div>
+               <div class="form-group col-12">
+                  <label for="ingredients">Ingredientes</label>
 
-  <%- include('./partials/_bootstrapscripts.ejs') %>
+                  <h4>Ingredientes Actuales</h4>
+               <ul>
+                  <% for(let i=0; i < product.Ingredientes.length; i++) { %> 
+
+                     
+                        <li>
+                           <p> <%= product.Ingredientes[i].name %> </p>
+                        </li>
+                     
+
+                  <% } %> 
+               </ul>
+                  <h4> Cargá nuevos ingredientes </h4>
+                  <% for(let i = 0; i < ingredients.length; i++){ %>
+
+                  <div>
+                     <label for="ingredients"><%= ingredients[i].name %></label>
+
+                     <input type="checkbox" name="ingredients" id="" value="<%= ingredients[i].id %> ">
+
+                  </div>
+
+
+                  <% } %>
+                  <small
+                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productIngredients) ? errors.productIngredients.msg : '' %></small>
+               </div>
+               <div class="form-group col-12">
+                  <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
+                  <input type="file" name="productImage" class="form-control-file" id="">
+                  <small
+                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productimage) ? errors.image.msg : '' %></small>
+               </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-sm">Modificar producto</button>
+         </form>
+      </div>
+   </div>
+
+   <%- include('./partials/_bootstrapscripts.ejs') %>
 </body>
 
 </html>

@@ -18,9 +18,10 @@ for (let i = 0; i < productsPARSED.length; i++) {
 
 const productsController = {
    index: (req, res) => {
-      res.render('products', {
-         products: productsPARSED
-      })
+      db.Product.findAll()
+         .then(function (result) {
+            res.render('products', { products: result })
+         })
    },
    uploadForm: (req, res) => {
       let Category;
@@ -49,6 +50,8 @@ const productsController = {
                ingredient_id: parseInt(elemento)
             })
          });
+      }).then(function (redireccionar) {
+         res.redirect('/products')
       })
    },
    detail: (req, res) => {
@@ -66,8 +69,19 @@ const productsController = {
          include: {
             all: true
          }
-      }).then(function (result) {
-         res.send(result)
+      }).then(function (producto) {
+
+         db.Category.findAll()
+            .then(function (categorias) {
+               db.Ingredient.findAll()
+                  .then(function (ingredientes) {
+                     res.render('modify-product-form', {
+                        product: producto,
+                        categories: categorias,
+                        ingredients: ingredientes
+                     })
+                  })
+            })
       })
 
    },
