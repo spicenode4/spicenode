@@ -15,14 +15,14 @@ router.get('/create', productsController.uploadForm);
 // 3 - Accion de creacion de producto
 router.post('/create', uploadProduct.any(), /* productValidation, */ productsController.create);
 // 4 - Detalle de un producto en particular
-router.get('/:productId', productsController.detail);
+router.get('/:id', productsController.detail);
 // 5 - Formulario de edicion de producto
-router.get('/:productId/edit', productsController.modifyForm);
+router.get('/:id/edit', productsController.modifyForm);
 // 6 - Accion de edicion de producto
-router.put('/:productId', uploadProduct.any(), /*modifyProductValidation,*/ productsController.updateProduct);
+router.put('/:id', uploadProduct.any(), /*modifyProductValidation,*/ productsController.updateProduct);
 // 7 - Formulario de borrado de productos
-router.get('/:productId/delete', productsController.deleteForm);
+router.get('/:id/delete', productsController.deleteForm);
 // 8 - Accion de borrado
-router.delete('/:productId', productsController.deleteProduct);
+router.delete('/:id', productsController.deleteProduct);
 
 module.exports = router;

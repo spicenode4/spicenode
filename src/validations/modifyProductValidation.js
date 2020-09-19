@@ -1,44 +1,44 @@
-// const fs = require('fs');
-// const path = require('path');
-// const { check, validationResult, body } = require('express-validator');
+const fs = require('fs');
+const path = require('path');
+const { check, validationResult, body } = require('express-validator');
 
-// let modifyProductValidation = [
-//   body('productName')
-//     .custom((value, { req }) => {
-//       if (value == req.body.productName) {
-//         return false;
-//       }
-//     }).withMessage('Debes ingresar algo distinto a lo que estaba'),
-//   body('productDescription')
-//     .custom((value, { req }) => {
-//       if (value == req.body.productDescription) {
-//         return false;
-//       }
-//     }).withMessage('Debes ingresar algo distinto a lo que estaba'),
-//   body('productCategory')
-//     .custom((value, { req }) => {
-//       if (value == req.body.productCategory) {
-//         return false;
-//       }
-//     }).withMessage('Debes ingresar algo distinto a lo que estaba'),
-//   body('productPrice')
-//     .custom((value, { req }) => {
-//       if (value == req.body.productPrice) {
-//         return false;
-//       }
-//     }).withMessage('Debes ingresar algo distinto a lo que estaba'),
-//   body('productIngredients')
-//     .custom((value, { req }) => {
-//       if (value == req.body.productIngredients) {
-//         return false;
-//       }
-//     }).withMessage('Debes ingresar algo distinto a lo que estaba')
-//   body('productImage')
-//     .custom((value, { req }) => {
-//       if (!req.files[0]) {
-//         return false;
-//       }
-//     }).withMessage('Debes ingresar una imagen nueva')
-// ]
+let modifyProductValidation = [
+   body('name')
+      .custom((value, { req }) => {
+         if (value == req.body.name) {
+            return false;
+         }
+      }).withMessage('Debes ingresar algo distinto a lo que estaba'),
+   body('description')
+      .custom((value, { req }) => {
+         if (value == req.body.description) {
+            return false;
+         }
+      }).withMessage('Debes ingresar algo distinto a lo que estaba'),
+   body('category')
+      .custom((value, { req }) => {
+         if (value == req.body.category) {
+            return false;
+         }
+      }).withMessage('Debes ingresar algo distinto a lo que estaba'),
+   body('price')
+      .custom((value, { req }) => {
+         if (value == req.body.price) {
+            return false;
+         }
+      }).withMessage('Debes ingresar algo distinto a lo que estaba'),
+   body('ingredients')
+      .custom((value, { req }) => {
+         if (value == req.body.ingredients) {
+            return false;
+         }
+      }).withMessage('Debes ingresar algo distinto a lo que estaba'),
+   body('image')
+      .custom((value, { req }) => {
+         if (!req.files[0]) {
+            return false;
+         }
+      }).withMessage('Debes ingresar una imagen nueva')
+]
 
-// module.exports = modifyProductValidation;
+module.exports = modifyProductValidation;

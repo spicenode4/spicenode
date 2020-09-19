@@ -55,14 +55,28 @@ const productsController = {
       })
    },
    detail: (req, res) => {
-      for (let i = 0; i < productsPARSED.length; i++) {
+
+      db.Product.findByPk(req.params.id, {
+         include: {
+            all: true
+         }
+      })
+         .then(function (producto) {
+            /* return res.send(producto) */
+            res.render('single-product', { product: producto })
+         })
+
+
+
+
+      /* for (let i = 0; i < productsPARSED.length; i++) {
          if (productsPARSED[i].productID == req.params.productId) {
             return res.render('single-product', {
                product: productsPARSED[i]
             })
          }
       }
-      res.send('Aca hay un error')
+      res.send('Aca hay un error') */
    },
    modifyForm: (req, res) => {
       db.Product.findByPk(req.params.productId, {
@@ -86,35 +100,16 @@ const productsController = {
 
    },
    updateProduct: (req, res, next) => {
-      let productToModify;
-      for (let i = 0; i < productsPARSED.length; i++) {
-         if (productsPARSED[i].productID == req.params.productId) {
-            productToModify = productsPARSED[i];
-         }
-      }
+
+
+
+
+
       let errors = validationResult(req);
 
       if (errors.isEmpty()) {
-         for (let i = 0; i < productsPARSED.length; i++) {
-            if (productsPARSED[i].productID == req.params.productId) {
-               productsPARSED[i] = {
-                  productID: productsPARSED[i].productID,
-                  productName: req.body.productName,
-                  productDescription: req.body.productDescription,
-                  productCategory: req.body.productCategory,
-                  productIngredients: req.body.productIngredients,
-                  productPrice: req.body.productPrice,
-                  productImage: (req.files[0] != undefined) ? req.files[0].filename : 'defaultProductAvatar.png'
-               }
-               console.log(req.body)
-               let newProductsJSON = JSON.stringify(productsPARSED)
-               fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
-               res.redirect('/');
-            }
-         }
       } else {
          res.render('modify-product-form', {
-            product: productToModify,
             errors: errors.mapped()
          })
       }
