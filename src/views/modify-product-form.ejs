@@ -51,30 +51,20 @@
                </div>
                <div class="form-group col-12">
                   <label for="ingredients">Ingredientes</label>
-
                   <h4>Ingredientes Actuales</h4>
                   <ul>
                   <% for(let i=0; i < product.Ingredientes.length; i++) { %> 
-
-                     
                         <li>
                            <p> <%= product.Ingredientes[i].name %> </p>
                         </li>
-                     
-
                   <% } %> 
                </ul>
                   <h4> Cargá nuevos ingredientes </h4>
                   <% for(let i = 0; i < ingredients.length; i++){ %>
-
                   <div>
                      <label for="ingredients"><%= ingredients[i].name %></label>
-
                      <input type="checkbox" name="ingredients" id="" value="<%= ingredients[i].id %> ">
-
                   </div>
-
-
                   <% } %>
                   <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productIngredients) ? errors.productIngredients.msg : '' %></small>
                </div>
