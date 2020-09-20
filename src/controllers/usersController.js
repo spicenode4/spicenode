@@ -24,30 +24,31 @@ const usersController = {
     res.render('login-form')
   },
   logUser: (req, res) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      let userToLog;
-      for (let i = 0; i < usersPARSED.length; i++) {
-        if (usersPARSED[i].userEmail == req.body.userEmail && bcrypt.compareSync(req.body.userPassword, usersPARSED[i].userPassword)) {
-          userToLog = usersPARSED[i];
-          break;
-        }
-      }
-      if (userToLog == undefined) {
-        return res.render('login-form', {
-          errors: [{ msg: 'Credenciales incorrectas' }]
-        });
-      }
-      req.session.loggedUser = userToLog;
-      if (req.body.rememberMe == "on") {
-        res.cookie('rememberMe', userToLog.userEmail, { maxAge: 1000 * 30 });
-      }
-      res.send('Usuario logeado con exito')
-    } else {
-      return res.render('login-form', {
-        errors: errores.mapped()
-      });
-    }
+    // let errors = validationResult(req);
+    // if (errors.isEmpty()) {
+    //   let userToLog;
+    //   for (let i = 0; i < usersPARSED.length; i++) {
+    //     if (usersPARSED[i].userEmail == req.body.userEmail && bcrypt.compareSync(req.body.userPassword, usersPARSED[i].userPassword)) {
+    //       userToLog = usersPARSED[i];
+    //       break;
+    //     }
+    //   }
+    //   if (userToLog == undefined) {
+    //     return res.render('login-form', {
+    //       errors: [{ msg: 'Credenciales incorrectas' }]
+    //     });
+    //   }
+    //   req.session.loggedUser = userToLog;
+    //   if (req.body.rememberMe == "on") {
+    //     res.cookie('rememberMe', userToLog.userEmail, { maxAge: 1000 * 30 });
+    //   }
+    //   res.send('Usuario logeado con exito')
+    // } else {
+    //   return res.render('login-form', {
+    //     errors: errores.mapped()
+    //   });
+    // }
+
   },
   showRegister: (req, res) => {
     res.render('register')

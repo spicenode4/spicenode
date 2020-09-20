@@ -20,22 +20,17 @@
                <div class="form-group col-12">
                   <label for="productName">Nombre del producto</label>
                   <input type="text" name="productName" id="" class="form-control" value="<%= product.name %>">
-                  <small
-                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productName) ? errors.productName.msg : '' %></small>
+                  <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productName) ? errors.productName.msg : '' %></small>
                </div>
                <div class="form-group col-12">
                   <label for="productDescription">Descripcion</label>
-                  <input type="text" name="productDescription" id="" class="form-control"
-                     value="<%= product.description %>">
-                  <small
-                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productDescription) ? errors.productDescription.msg : '' %></small>
+                  <input type="text" name="productDescription" id="" class="form-control" value="<%= product.description %>">
+                  <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productDescription) ? errors.productDescription.msg : '' %></small>
                </div>
                <div class="form-group col-12">
                   <label for="productCategory">Categoria de producto</label>
-                  <input type="text" name="productCategory" id="" class="form-control"
-                     value="<%= product.Category.name %>">
-                  <small
-                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productCategory) ? errors.productCategory.msg : '' %></small>
+                  <input type="text" name="productCategory" id="" class="form-control" value="<%= product.Category.name %>">
+                  <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productCategory) ? errors.productCategory.msg : '' %></small>
                </div>
                <div>
                   <label for="">Categoría</label>
@@ -47,20 +42,18 @@
                      </option>
                      <% } %>
                   </select>
-                  <small
-                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productcategories) ? errors.productcategories.msg : '' %></small>
+                  <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productcategories) ? errors.productcategories.msg : '' %></small>
                </div>
                <div class="form-group col-12">
                   <label for="productPrice">Precio</label>
                   <input type="text" name="productPrice" id="" class="form-control" value="<%= product.price %>">
-                  <small
-                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productPrice) ? errors.productPrice.msg : '' %></small>
+                  <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productPrice) ? errors.productPrice.msg : '' %></small>
                </div>
                <div class="form-group col-12">
                   <label for="ingredients">Ingredientes</label>
 
                   <h4>Ingredientes Actuales</h4>
-               <ul>
+                  <ul>
                   <% for(let i=0; i < product.Ingredientes.length; i++) { %> 
 
                      
@@ -83,14 +76,12 @@
 
 
                   <% } %>
-                  <small
-                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productIngredients) ? errors.productIngredients.msg : '' %></small>
+                  <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productIngredients) ? errors.productIngredients.msg : '' %></small>
                </div>
                <div class="form-group col-12">
                   <label class="text-secondary" for="productImage">Archivos en PNG o JPEG</label>
                   <input type="file" name="productImage" class="form-control-file" id="">
-                  <small
-                     class="text-danger"><%= (typeof errors != 'undefined' && errors.productimage) ? errors.image.msg : '' %></small>
+                  <small class="text-danger"><%= (typeof errors != 'undefined' && errors.productimage) ? errors.image.msg : '' %></small>
                </div>
             </div>
             <button type="submit" class="btn btn-success btn-sm">Modificar producto</button>

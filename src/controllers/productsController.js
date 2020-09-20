@@ -37,7 +37,6 @@ const productsController = {
    },
    create: (req, res, next) => {
       db.Product.create({
-
          name: req.body.name,
          description: req.body.description,
          category_id: req.body.category,
@@ -55,7 +54,6 @@ const productsController = {
       })
    },
    detail: (req, res) => {
-
       db.Product.findByPk(req.params.id, {
          include: {
             all: true
@@ -65,10 +63,6 @@ const productsController = {
             /* return res.send(producto) */
             res.render('single-product', { product: producto })
          })
-
-
-
-
       /* for (let i = 0; i < productsPARSED.length; i++) {
          if (productsPARSED[i].productID == req.params.productId) {
             return res.render('single-product', {
@@ -79,16 +73,16 @@ const productsController = {
       res.send('Aca hay un error') */
    },
    modifyForm: (req, res) => {
-      db.Product.findByPk(req.params.productId, {
+      db.Product.findByPk(req.params.id, {
          include: {
             all: true
          }
       }).then(function (producto) {
-
          db.Category.findAll()
             .then(function (categorias) {
                db.Ingredient.findAll()
                   .then(function (ingredientes) {
+                     // return res.json({ product: producto, categories: categorias, ingredients: ingredientes });
                      res.render('modify-product-form', {
                         product: producto,
                         categories: categorias,
@@ -97,22 +91,16 @@ const productsController = {
                   })
             })
       })
-
    },
-   updateProduct: (req, res, next) => {
+   updateProduct: (req, res) => {
+      // let errors = validationResult(req);
+      // if (errors.isEmpty()) {
+      // } else {
+      //    res.render('modify-product-form', {
+      //       errors: errors.mapped()
+      //    })
+      // }
 
-
-
-
-
-      let errors = validationResult(req);
-
-      if (errors.isEmpty()) {
-      } else {
-         res.render('modify-product-form', {
-            errors: errors.mapped()
-         })
-      }
    },
    deleteForm: (req, res) => {
       for (let i = 0; i < productsPARSED.length; i++) {

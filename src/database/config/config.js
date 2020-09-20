@@ -1,10 +1,11 @@
 module.exports = {
    "development": {
       "username": "root",
-      "password": "",
+      "password": "root",
       "database": "spicenode",
       "host": "127.0.0.1",
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "port": 8889
    },
    "test": {
       "username": "root",

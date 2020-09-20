@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-  <%- include('./partials/_head.ejs') %> 
-  <title><%= product.name %>  - Spice Node </title>
+  <%- include('./partials/_head.ejs') %>
+  <title><%= product.name %> - Spice Node </title>
 </head>
 
 <body>
   <!-- Header -->
   <%- include('./partials/_navBar.ejs') %>
-  
+
   <!-- Producto Individual -->
   <main class="my-5">
     <div class="container">
@@ -27,12 +27,12 @@
               <ul>
               <% for(let i=0; i < product.Ingredientes.length; i++) { %> 
 
-               <li>
+              <li>
                   <%= product.Ingredientes[i].name %> 
-               </li>
+              </li>
 
               <% } %>
-               </ul>
+              </ul>
             </article>
             <article class="product__suggestedUses my-3">
               <h4 class="heading-tertiary my-2">Usos sugeridos</h4>
@@ -55,52 +55,52 @@
           <div class="container my-5">
             <div class="row">
               <% for( let i = 0; i < 3; i++ ) { %>
-                <div class="col-6 col-md-4">
-                  <section class="relatedProducts__relatedProduct d-flex flex-wrap flex-column align-items-center">
-                    <img src="/images/cajun.png" alt="cajun">
-                    <h3>Tandoor</h3>
-                    <p class="my-1">Lorem, ipsum dolor.</p>
-                    <p>$100</p>
-                    <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
-                  </section>
-                </div>
-                <% } %>
+              <div class="col-6 col-md-4">
+                <section class="relatedProducts__relatedProduct d-flex flex-wrap flex-column align-items-center">
+                  <img src="/images/cajun.png" alt="cajun">
+                  <h3>Tandoor</h3>
+                  <p class="my-1">Lorem, ipsum dolor.</p>
+                  <p>$100</p>
+                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+                </section>
               </div>
+              <% } %>
             </div>
           </div>
-          <div class="carousel-item" data-interval="false">
-            <div class="container my-5">
-              <div class="row">
-                <% for( let i = 0; i < 3; i++ ) { %>
-                  <div class="col-6 col-md-4">
-                    <section class="relatedProducts__relatedProduct d-flex flex-wrap flex-column align-items-center">
-                      <img src="/images/cajun.png" alt="cajun">
-                      <h3>Tandoor</h3>
-                      <p class="my-1">Lorem, ipsum dolor.</p>
-                      <p>$100</p>
-                      <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
-                    </section>
-                  </div>
-                  <% } %>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
-      </section>
-      
-      <!-- Footer -->
-      <%- include('./partials/_footer.ejs') %>  
-      <!-- BSC -->
-      <%- include('./partials/_bootstrapscripts.ejs') %>
-    </body>
-    
-    </html>
+        <div class="carousel-item" data-interval="false">
+          <div class="container my-5">
+            <div class="row">
+              <% for( let i = 0; i < 3; i++ ) { %>
+              <div class="col-6 col-md-4">
+                <section class="relatedProducts__relatedProduct d-flex flex-wrap flex-column align-items-center">
+                  <img src="/images/cajun.png" alt="cajun">
+                  <h3>Tandoor</h3>
+                  <p class="my-1">Lorem, ipsum dolor.</p>
+                  <p>$100</p>
+                  <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
+                </section>
+              </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <%- include('./partials/_footer.ejs') %>
+  <!-- BSC -->
+  <%- include('./partials/_bootstrapscripts.ejs') %>
+</body>
+
+</html>
