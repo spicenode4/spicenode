@@ -130,45 +130,53 @@ const productsController = {
                 })
             })
         })
-        // .then(function (result) {
-        //   db.Product.update({
-        //     name: req.body.name,
-        //     description: req.body.description,
-        //     category_id: req.body.category,
-        //     price: req.body.price,
-        //     image: req.files[0].filename
-        //   },
-        //     {
-        //       where: {
-        //         id: req.params.id
-        //       }
-        //     })
-        //     .then(function (result) {
-        //       return res.send("ok")
-        //     })
-        // })
       })
   },
   deleteForm: (req, res) => {
-    for (let i = 0; i < productsPARSED.length; i++) {
-      if (productsPARSED[i].productID == req.params.productId) {
-        return res.render('delete-product-form', {
-          product: productsPARSED[i]
-        });
+    db.Product.findByPk(req.params.id, {
+      include: {
+        all: true
       }
-    }
-    res.send('Estas queriendo borrar algo que no se puede')
+    })
+      .then(function (result) {
+        res.render("delete-product-form", {
+          product: result
+        })
+      })
+    // for (let i = 0; i < productsPARSED.length; i++) {
+    //   if (productsPARSED[i].productID == req.params.productId) {
+    //     return res.render('delete-product-form', {
+    //       product: productsPARSED[i]
+    //     });
+    //   }
+    // }
+    // res.send('Estas queriendo borrar algo que no se puede')
   },
   deleteProduct: (req, res) => {
-    for (let i = 0; i < productsPARSED.length; i++) {
-      if (productsPARSED[i].productID == req.params.productId) {
-        productsPARSED.splice(i, 1);
-        let newProductsJSON = JSON.stringify(productsPARSED)
-        fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
-        return res.redirect('/');
+    db.ProductsIngredients.destroy({
+      where: {
+        product_id: req.params.id
       }
-    }
-    res.send('Error de delete product')
+    })
+      .then(function (result) {
+        db.Product.destroy({
+          where: {
+            id: req.params.id
+          }
+        })
+          .then((result) => {
+            res.redirect("/products")
+          })
+      })
+    // for (let i = 0; i < productsPARSED.length; i++) {
+    //   if (productsPARSED[i].productID == req.params.productId) {
+    //     productsPARSED.splice(i, 1);
+    //     let newProductsJSON = JSON.stringify(productsPARSED)
+    //     fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
+    //     return res.redirect('/');
+    //   }
+    // }
+    // res.send('Error de delete product')
   },
   prueba: (req, res) => {
     db.sequelize.query("SELECT * FROM products")
