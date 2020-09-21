@@ -64,11 +64,11 @@ const productsController = {
         res.render('single-product', { product: producto })
       })
     /* for (let i = 0; i < productsPARSED.length; i++) {
-       if (productsPARSED[i].productID == req.params.productId) {
+      if (productsPARSED[i].productID == req.params.productId) {
           return res.render('single-product', {
-             product: productsPARSED[i]
+            product: productsPARSED[i]
           })
-       }
+      }
     }
     res.send('Aca hay un error') */
   },
@@ -77,20 +77,21 @@ const productsController = {
       include: {
         all: true
       }
-    }).then(function (producto) {
-      db.Category.findAll()
-        .then(function (categorias) {
-          db.Ingredient.findAll()
-            .then(function (ingredientes) {
-              // return res.json({ product: producto, categories: categorias, ingredients: ingredientes });
-              res.render('modify-product-form', {
-                product: producto,
-                categories: categorias,
-                ingredients: ingredientes
-              })
-            })
-        })
     })
+      .then(function (producto) {
+        db.Category.findAll()
+          .then(function (categorias) {
+            db.Ingredient.findAll()
+              .then(function (ingredientes) {
+                // return res.json({ product: producto, categories: categorias, ingredients: ingredientes });
+                res.render('modify-product-form', {
+                  product: producto,
+                  categories: categorias,
+                  ingredients: ingredientes
+                })
+              })
+          })
+      })
   },
   updateProduct: (req, res) => {
     // let errors = validationResult(req);
@@ -111,10 +112,41 @@ const productsController = {
             product_id: req.params.id,
             ingredient_id: parseInt(elemento)
           })
+            .then(function (result) {
+              db.Product.update({
+                name: req.body.name,
+                description: req.body.description,
+                category_id: req.body.category,
+                price: req.body.price,
+                image: req.files[0].filename
+              },
+                {
+                  where: {
+                    id: req.params.id
+                  }
+                })
+                .then(function (result) {
+                  return res.redirect("/products")
+                })
+            })
         })
-      })
-      .then(function (result) {
-        return res.send("ok")
+        // .then(function (result) {
+        //   db.Product.update({
+        //     name: req.body.name,
+        //     description: req.body.description,
+        //     category_id: req.body.category,
+        //     price: req.body.price,
+        //     image: req.files[0].filename
+        //   },
+        //     {
+        //       where: {
+        //         id: req.params.id
+        //       }
+        //     })
+        //     .then(function (result) {
+        //       return res.send("ok")
+        //     })
+        // })
       })
   },
   deleteForm: (req, res) => {
