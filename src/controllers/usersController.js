@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
+let db = require('../database/models');
 const { check, validationResult, body } = require('express-validator');
 
 // 1) Leo el JSON
@@ -53,27 +54,44 @@ const usersController = {
   showRegister: (req, res) => {
     res.render('register')
   },
-  createUser: (req, res, next) => {
+  createUser: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let newUser = {
-        userID: lastID + 1,
-        userName: req.body.userName,
-        userLastName: req.body.userLastName,
-        userCategory: "user",
-        userEmail: req.body.userEmail,
-        userPassword: bcrypt.hashSync(req.body.userPassword, 10),
-        userAvatar: (req.files[0] != undefined) ? req.files[0].filename : 'defaultUserAvatar.png'
-      }
-      usersPARSED.push(newUser);
-      let newUsersJSON = JSON.stringify(usersPARSED);
-      fs.writeFileSync(path.join(__dirname, '../data/users.json'), newUsersJSON)
-      res.send('Se registro un usuario correctamente');
+      db.User.create({
+        name: req.body.name,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        avatar: (req.files[0] != undefined) ? req.files[0].filename : 'defaultUserAvatar.png'
+      })
+        .then(function (result) {
+          res.send("se registro el usuario")
+        })
     } else {
-      res.render('register', {
+      res.render("register", {
         errors: errors.mapped()
       })
     }
+    // let errors = validationResult(req);
+    // if (errors.isEmpty()) {
+    //   let newUser = {
+    //     userID: lastID + 1,
+    //     userName: req.body.userName,
+    //     userLastName: req.body.userLastName,
+    //     userCategory: "user",
+    //     userEmail: req.body.userEmail,
+    //     userPassword: bcrypt.hashSync(req.body.userPassword, 10),
+    //     userAvatar: (req.files[0] != undefined) ? req.files[0].filename : 'defaultUserAvatar.png'
+    //   }
+    //   usersPARSED.push(newUser);
+    //   let newUsersJSON = JSON.stringify(usersPARSED);
+    //   fs.writeFileSync(path.join(__dirname, '../data/users.json'), newUsersJSON)
+    //   res.send('Se registro un usuario correctamente');
+    // } else {
+    //   res.render('register', {
+    //     errors: errors.mapped()
+    //   })
+    // }
   },
   userLogOut: (req, res) => {
     req.session.destroy();

@@ -4,12 +4,12 @@
 <head>
   <%- include('./partials/_head.ejs') %>
   <title>Registro - Spice Node</title>
-  
+
 </head>
 
 <body>
   <%- include('./partials/_navBar.ejs') %>
-  
+
   <!-- Formulario de registro -->
   <div class="ccMasterRegister">
     <div class="loginForm container d-flex flex-wrap flex-column align-items-center">
@@ -20,29 +20,29 @@
         <form action="/users/register" method="POST" enctype="multipart/form-data">
           <div class="form-row">
             <div class="form-group col-12">
-              <label for="userName">Nombre</label>
-              <input type="text" name="userName" id="inputUserName" class="form-control" placeholder="Cosme">
-              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.userName) ? errors.userName.msg : '' %></small>
+              <label for="name">Nombre</label>
+              <input type="text" name="name" id="inputUserName" class="form-control" placeholder="Cosme">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.name) ? errors.name.msg : '' %></small>
             </div>
             <div class="form-group col-12">
-              <label for="userLastName">Apellido</label>
-              <input type="text" name="userLastName" id="inputUserLastName" class="form-control" placeholder="Fulanito">
-              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.userLastName) ? errors.userLastName.msg : '' %></small>
+              <label for="lastname">Apellido</label>
+              <input type="text" name="lastname" id="inputlastname" class="form-control" placeholder="Fulanito">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.lastname) ? errors.lastname.msg : '' %></small>
             </div>
             <div class="form-group col-12">
-              <label for="userEmail">Email</label>
-              <input type="email" name="userEmail" id="inputUserEmail" class="form-control" placeholder="emailfalso123@gmail.com">
-              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.userEmail) ? errors.userEmail.msg : '' %></small>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="inputemail" class="form-control" placeholder="emailfalso123@gmail.com">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
             </div>
             <div class="form-group col-12">
-              <label for="userPassword">Password</label>
-              <input type="password" name="userPassword" id="inputUserPassword" class="form-control" placeholder="123456789">
-              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.userPassword) ? errors.userPassword.msg : '' %></small>
+              <label for="password">Password</label>
+              <input type="password" name="password" id="inputpassword" class="form-control" placeholder="123456789">
+              <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
               <small class="form-text text-muted">Por favor no le pongas 12345689 😂</small>
             </div>
             <div class="form-group col-12">
-              <label for="userAvatar">Avatar</label>
-              <input type="file" name="userAvatar" id="inputUserAvatar" class="form-control" placeholder="No se que va acá">
+              <label for="avatar">Avatar</label>
+              <input type="file" name="avatar" id="inputavatar" class="form-control" placeholder="No se que va acá">
             </div>
           </div>
           <button type="submit" class="btn btn-success btn-sm w-100">Confirmar registro</button>
