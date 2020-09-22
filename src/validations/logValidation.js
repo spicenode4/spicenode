@@ -7,9 +7,9 @@ const { check, validationResult, body } = require('express-validator');
 // (usersJSON == '') ? usersPARSED = [] : usersPARSED = JSON.parse(usersJSON);
 
 let logValidation = [
-  check('userEmail')
+  check('email')
     .isEmail().withMessage('Debes ingresar un email válido'),
-  check('userPassword')
+  check('password')
     .isLength({ min: 8, max: 30 }).withMessage('La constraseña debe contener como mínimo 8 caracteres')
 ]
 

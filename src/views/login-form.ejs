@@ -12,33 +12,35 @@
   <div class="loginForm container d-flex justify-content-center mt-5">
     <form action="/users/login" method="POST" class="ccSignIn p-4 rounded bg-white shadow">
       <h4 class="heading-secondary mb-4">Por favor ingresá tu usuario y contraseña</h4>
-      <% if (typeof errors != 'undefined') { %>
-        <p style="color: red">Hubo un error:</p>
-        <ul>
+      <!-- <% if (typeof errors != 'undefined') { %>
+      <p style="color: red">Hubo un error:</p>
+      <ul>
           <% for( let i = 0; i < errors.length; i++ ) { %>
             <li><%= errors[i].msg %> </li>
             <% } %>
           </ul>
-          <% } %>
+      <% } %> -->
       <div class="form-group">
-        <label for="userEmail">Mail</label>
-        <input type="email" name="userEmail" class="form-control" id="">
+        <label for="email">Mail</label>
+        <input type="email" name="email" class="form-control" id="">
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
       </div>
       <div class="form-group">
-        <label for="userPassword">Contraseña</label>
-        <input type="password" name="userPassword" class="form-control" id="">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" class="form-control" id="">
+        <small class="text-danger"><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
         <small class="form-text text-muted">Nunca compartiremos la contraseña con nadie más.</small>
       </div>
       <div class="form-group form-check">
         <input name="rememberMe" type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="recordame">Recordarme como usuario</label>
-    </div>
-    <button type="submit" class="btn btn-success w-100">Ingresar</button>
-  </form>
-</div>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Ingresar</button>
+    </form>
+  </div>
 
-<!-- Bootstrap scripts -->
-<%- include('./partials/_bootstrapscripts.ejs') %>
+  <!-- Bootstrap scripts -->
+  <%- include('./partials/_bootstrapscripts.ejs') %>
 </body>
 
 </html>

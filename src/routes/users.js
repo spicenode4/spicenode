@@ -7,7 +7,7 @@ const registerValidation = require('../validations/registerValidation');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 router.get('/login', usersController.showLogin); //* Formulario de login
-router.post('/login', usersController.logUser); //* Logear usuario
+router.post('/login', logValidation, usersController.logUser); //* Logear usuario
 router.get('/register', usersController.showRegister); //* Formulario de registro
 router.post('/register', uploadAvatar.any(), registerValidation, usersController.createUser); //* Crear usuario
 router.get('/logout', authMiddleware, usersController.userLogOut);

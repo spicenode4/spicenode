@@ -25,6 +25,37 @@ const usersController = {
     res.render('login-form')
   },
   logUser: (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      db.User.findOne({
+        where: {
+          email: req.body.email
+        }
+      })
+        .then(function (result) {
+          if (bcrypt.compareSync(req.body.password, result.password)) {
+            req.session.loggedUser = {
+              name: result.name,
+              email: result.email,
+              category: result.category
+            }
+            if (req.body.rememberMe == "on") {
+              res.cookie('rememberMe', req.session.loggedUser.email, { maxAge: 1000 * 30 });
+            }
+            res.redirect("/")
+          } else {
+            return res.render("login-form", {
+              errors: errors.mapped()
+            })
+          }
+        })
+    } else {
+      // return res.send(errors.mapped())
+      res.render("login-form", {
+        errors: errors.mapped()
+      })
+    }
+
     // let errors = validationResult(req);
     // if (errors.isEmpty()) {
     //   let userToLog;
@@ -65,33 +96,13 @@ const usersController = {
         avatar: (req.files[0] != undefined) ? req.files[0].filename : 'defaultUserAvatar.png'
       })
         .then(function (result) {
-          res.send("se registro el usuario")
+          res.redirect("/")
         })
     } else {
       res.render("register", {
         errors: errors.mapped()
       })
     }
-    // let errors = validationResult(req);
-    // if (errors.isEmpty()) {
-    //   let newUser = {
-    //     userID: lastID + 1,
-    //     userName: req.body.userName,
-    //     userLastName: req.body.userLastName,
-    //     userCategory: "user",
-    //     userEmail: req.body.userEmail,
-    //     userPassword: bcrypt.hashSync(req.body.userPassword, 10),
-    //     userAvatar: (req.files[0] != undefined) ? req.files[0].filename : 'defaultUserAvatar.png'
-    //   }
-    //   usersPARSED.push(newUser);
-    //   let newUsersJSON = JSON.stringify(usersPARSED);
-    //   fs.writeFileSync(path.join(__dirname, '../data/users.json'), newUsersJSON)
-    //   res.send('Se registro un usuario correctamente');
-    // } else {
-    //   res.render('register', {
-    //     errors: errors.mapped()
-    //   })
-    // }
   },
   userLogOut: (req, res) => {
     req.session.destroy();
