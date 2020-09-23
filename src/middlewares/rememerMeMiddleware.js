@@ -13,6 +13,7 @@ let rememberMeMiddleware = (req, res, next) => {
          .then(function (result) {
             req.session.usuarioLogueado = result.email
             let usuarioLogueado = req.session.usuarioLogueado
+
          })
    }
 
