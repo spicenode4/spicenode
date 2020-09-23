@@ -27,6 +27,7 @@ const usersController = {
    logUser: (req, res) => {
       let errors = validationResult(req);
       if (errors.isEmpty()) {
+         let userToLog;
          db.User.findOne({
             where: {
                email: req.body.email
@@ -34,29 +35,41 @@ const usersController = {
          })
             .then(function (result) {
                if (bcrypt.compareSync(req.body.password, result.password)) {
-                  db.Product.findAll()
-                     .then(function (productos) {
-                        req.session.loggedUser = {
-                           name: result.name,
-                           email: result.email,
-                           category: result.category
-                        }
-                        let usuario = req.session.loggedUser;
-                        if (req.body.rememberMe == "on") {
-                           res.cookie('rememberMe', req.session.loggedUser.email, { maxAge: 1000 * 30 });
-                        }
 
-                        res.render("index", { usuario: usuario, products: productos })
+                  userToLog = {
+                     name: result.name,
+                     email: result.email,
+                     category: result.category
+                  }
+
+                  if (userToLog == undefined) {
+                     console.log('hoal');
+                     return res.render('login-form', {
+                        password: { msg: 'credenciales incorrectas' }
                      })
+                  }
+
+                  req.session.loggedUser = userToLog;
+
+                  if (req.body.rememberMe == "on") {
+                     res.cookie('rememberMe', userToLog.email, { maxAge: 1000 * 60 });
+                  }
+                  console.log(req.session);
+                  console.log(req.cookies);
+                  res.redirect('/')
+
+                  /* res.render("index", { usuario: usuario, products: productos }) */
+
+
                } else {
                   return res.render("login-form", {
                      errors: errors.mapped(),
-                     usuario: usuario
+
                   })
                }
             })
       } else {
-         // return res.send(errors.mapped())
+         /* return res.send(errors.mapped()) */
          res.render("login-form", {
             errors: errors.mapped()
          })

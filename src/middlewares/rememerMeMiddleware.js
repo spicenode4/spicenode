@@ -12,9 +12,7 @@ let rememberMeMiddleware = (req, res, next) => {
       })
          .then(function (result) {
             req.session.usuarioLogueado = result.email
-            console.log(req.session.usuarioLogueado);
             let usuarioLogueado = req.session.usuarioLogueado
-            console.log(`+***************************************************+${usuarioLogueado}`);
          })
    }
 
