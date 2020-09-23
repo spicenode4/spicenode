@@ -15,11 +15,13 @@
       <li class="nav-item"><a class="nav-link" href="/users/login">Log In</a></li>
       <li class="nav-item"><a class="nav-link" href="/users/register">Sing Up</a></li>
       <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+
+      <% if(typeof usuarioLogueado != 'undefined') { %>  
+
+         <li class="nav-item"><a class="nav-link" href=""><%= usuarioLogueado %> </a></li>
+
+      <%  } %> 
     </ul>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
 
   </div>
 </nav>
