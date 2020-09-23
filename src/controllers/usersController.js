@@ -34,71 +34,77 @@ const usersController = {
             }
          })
             .then(function (result) {
-               if (bcrypt.compareSync(req.body.password, result.password)) {
+               if (result) {
+                  if (bcrypt.compareSync(req.body.password, result.password)) {
 
-                  userToLog = {
-                     name: result.name,
-                     email: result.email,
-                     category: result.category
-                  }
+                     userToLog = {
+                        name: result.name,
+                        email: result.email,
+                        category: result.category
+                     }
 
-                  if (userToLog == undefined) {
-                     console.log('hoal');
-                     return res.render('login-form', {
-                        password: { msg: 'credenciales incorrectas' }
+                     /* if (userToLog == undefined) {
+                        console.log('hola');
+                        return res.render('login-form', {
+                           password: { msg: 'credenciales incorrectas' }
+                        })
+                     } */
+
+                     req.session.loggedUser = userToLog;
+
+                     if (req.body.rememberMe == "on") {
+                        res.cookie('rememberMe', userToLog.email, { maxAge: 1000 * 60 });
+                     }
+                     /* console.log(req.session);
+                     console.log(req.cookies); */
+                     res.redirect('/')
+
+                     /* res.render("index", { usuario: usuario, products: productos }) */
+
+                  } else {
+                     console.log("LAS CREDENCIALES SON INCORRECTAS")
+                     return res.render("login-form", {
+                        errors: [{ msg: 'Credenciales incorrectas' }]
                      })
                   }
-
-                  req.session.loggedUser = userToLog;
-
-                  if (req.body.rememberMe == "on") {
-                     res.cookie('rememberMe', userToLog.email, { maxAge: 1000 * 60 });
-                  }
-                  console.log(req.session);
-                  console.log(req.cookies);
-                  res.redirect('/')
-
-                  /* res.render("index", { usuario: usuario, products: productos }) */
-
-
                } else {
-                  return res.render("login-form", {
-                     errors: errors.mapped(),
-
-                  })
+                  console.log("NO SE ENCONTRO UN USUARIO")
                }
             })
       } else {
          /* return res.send(errors.mapped()) */
-         res.render("login-form", {
-            errors: errors.mapped()
-         })
+         console.log("ACA IRIAN LOS ERRORES"),
+            res.render("login-form", {
+               errors: errors.mapped()
+            })
       }
 
-      // let errors = validationResult(req);
-      // if (errors.isEmpty()) {
-      //   let userToLog;
-      //   for (let i = 0; i < usersPARSED.length; i++) {
-      //     if (usersPARSED[i].userEmail == req.body.userEmail && bcrypt.compareSync(req.body.userPassword, usersPARSED[i].userPassword)) {
-      //       userToLog = usersPARSED[i];
-      //       break;
-      //     }
-      //   }
-      //   if (userToLog == undefined) {
-      //     return res.render('login-form', {
-      //       errors: [{ msg: 'Credenciales incorrectas' }]
-      //     });
-      //   }
-      //   req.session.loggedUser = userToLog;
-      //   if (req.body.rememberMe == "on") {
-      //     res.cookie('rememberMe', userToLog.userEmail, { maxAge: 1000 * 30 });
-      //   }
-      //   res.send('Usuario logeado con exito')
-      // } else {
-      //   return res.render('login-form', {
-      //     errors: errores.mapped()
-      //   });
-      // }
+
+
+      /* let errors = validationResult(req);
+      if (errors.isEmpty()) {
+        let userToLog;
+        for (let i = 0; i < usersPARSED.length; i++) {
+          if (usersPARSED[i].userEmail == req.body.userEmail && bcrypt.compareSync(req.body.userPassword, usersPARSED[i].userPassword)) {
+            userToLog = usersPARSED[i];
+            break;
+          }
+        }
+        if (userToLog == undefined) {
+          return res.render('login-form', {
+            errors: [{ msg: 'Credenciales incorrectas' }]
+          });
+        }
+        req.session.loggedUser = userToLog;
+        if (req.body.rememberMe == "on") {
+          res.cookie('rememberMe', userToLog.userEmail, { maxAge: 1000 * 30 });
+        }
+        res.send('Usuario logeado con exito')
+      } else {
+        return res.render('login-form', {
+          errors: errores.mapped()
+        });
+      } */
 
    },
    showRegister: (req, res) => {
@@ -126,7 +132,7 @@ const usersController = {
    userLogOut: (req, res) => {
       req.session.destroy();
       res.cookie('rememberMe', '', { maxAge: -1 })
-      res.send('Te deslogueaste con éxito')
+      res.redirect('/')
    }
 }
 

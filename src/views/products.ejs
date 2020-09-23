@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-	<%- include('./partials/_head.ejs') %> 
+	<%- include('./partials/_head.ejs') %>
 	<title>Productos - Spice Node</title>
 </head>
 
 <body>
 	<!-- Header -->
 	<%- include('./partials/_navBar.ejs') %>
-	
+
 	<header class="header d-flex justify-content-center align-items-center">
 		<div class="header__text-box">
 			<h1 class="heading-header">
@@ -17,26 +17,26 @@
 			</h1>
 		</div>
 	</header>
-	
+
 	<!-- Main -->
 	<main class="indexMain bg-ligth">
 		<section class="products container shadow py-4 px-5 bg-white rounder d-flex flex-wrap flex-direction-column justify-content-center">
 			<h2 class="heading-secondary text-center">Presentación individual</h2>
 			<div class="row">
 				<% for( let i = 0; i < products.length; i++ ) { %>
-					<div class="col-12 col-lg-4">
-						<div class="products__info-box d-flex flex-wrap flex-column align-items-center">
-							<a href="/products/<%= products[i].id %>"><img class="products__img" src="/uploads/productsImages/<%= products[i].image %>" alt="<%= products[i].name%>"></a>
-							<h3 class="heading-tertiary"><%= products[i].name %></h3>
-							<p class="products__info-box__description"><%= products[i].description %></p>
-							<p class="products__info-box__price"><%= products[i].price %></p>
-						</div>
+				<div class="col-12 col-lg-4">
+					<div class="products__info-box d-flex flex-wrap flex-column align-items-center">
+						<a href="/products/<%= products[i].id %>"><img class="products__img" src="/uploads/productsImages/<%= products[i].image %>" alt="<%= products[i].name%>"></a>
+						<h3 class="heading-tertiary"><%= products[i].name %></h3>
+						<p class="products__info-box__description"><%= products[i].description %></p>
+						<p class="products__info-box__price"><%= products[i].price %></p>
 					</div>
-					<% } %>
 				</div>
-			</section>
-			
-			<section class="products container shadow py-4 px-5 bg-white rounder d-flex flex-wrap flex-direction-column justify-content-center">
+				<% } %>
+			</div>
+		</section>
+
+		<!-- <section class="products container shadow py-4 px-5 bg-white rounder d-flex flex-wrap flex-direction-column justify-content-center">
 				<h2 class="heading-secondary text-center">Combos</h2>
 				<div class="row">
 					<% for( let i = 0; i < products.length; i++ ) { %>
@@ -50,12 +50,13 @@
 						</div>
 						<% } %>
 					</div>
-				</section>
-			</main>
-			
-			<!-- Footer -->
-			<%- include('./partials/_footer.ejs') %>
-			<!-- BSC --> 
-			<%- include('./partials/_bootstrapscripts.ejs') %> 
-		</body>
-		</html>
+				</section> -->
+	</main>
+
+	<!-- Footer -->
+	<%- include('./partials/_footer.ejs') %>
+	<!-- BSC -->
+	<%- include('./partials/_bootstrapscripts.ejs') %>
+</body>
+
+</html>

@@ -34,10 +34,10 @@
               <% } %>
               </ul>
             </article>
-            <article class="product__suggestedUses my-3">
+            <!-- <article class="product__suggestedUses my-3">
               <h4 class="heading-tertiary my-2">Usos sugeridos</h4>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, facilis.</p>
-            </article>
+            </article> -->
             <a href="/cart"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
             <a href="/products/<%= product.id %>/edit"><button type="submit" class="btn btn-secondary my -4">Modificar producto</button></a>
             <a href="/products/<%= product.id %>/delete"><button type="submit" class="btn btn-danger my -4">Eliminar</button></a>
@@ -57,10 +57,10 @@
               <% for( let i = 0; i < 3; i++ ) { %>
               <div class="col-6 col-md-4">
                 <section class="relatedProducts__relatedProduct d-flex flex-wrap flex-column align-items-center">
-                  <img src="/images/cajun.png" alt="cajun">
-                  <h3>Tandoor</h3>
-                  <p class="my-1">Lorem, ipsum dolor.</p>
-                  <p>$100</p>
+                  <a href="/products/<%= products[i].id %>"><img src="/uploads/productsImages/<%= products[i].image %> " alt="cajun"></a>
+                  <h3><%= products[i].name %> </h3>
+                  <p class="my-1"><%= products[i].description %> </p>
+                  <p><%= products[i].price %> </p>
                   <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
                 </section>
               </div>
@@ -74,10 +74,10 @@
               <% for( let i = 0; i < 3; i++ ) { %>
               <div class="col-6 col-md-4">
                 <section class="relatedProducts__relatedProduct d-flex flex-wrap flex-column align-items-center">
-                  <img src="/images/cajun.png" alt="cajun">
-                  <h3>Tandoor</h3>
-                  <p class="my-1">Lorem, ipsum dolor.</p>
-                  <p>$100</p>
+                  <a href="/products/<%= products[i+2].id %>"><img src="/uploads/productsImages/<%= products[i+2].image %> " alt="cajun"></a>
+                  <h3><%= products[i+2].name %> </h3>
+                  <p class="my-1"><%= products[i+2].description %> </p>
+                  <p><%= products[i+2].price %> </p>
                   <a href="/carrito"><button type="submit" class="btn btn-success my -4">Agregar al carrito</button></a>
                 </section>
               </div>

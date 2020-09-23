@@ -1,16 +1,8 @@
 window.onload = function () {
-
-
-
    let boton = document.querySelector('.botonEnviar')
-
-
    let nombre = document.querySelector('#nombre')
-
    let email = document.querySelector('#email')
-
    let text = document.querySelector('#text')
-
    let errores = [];
 
    boton.addEventListener("click", function (evento) {

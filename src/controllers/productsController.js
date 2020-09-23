@@ -60,8 +60,13 @@ const productsController = {
       }
     })
       .then(function (producto) {
-        /* return res.send(producto) */
-        res.render('single-product', { product: producto })
+        db.Product.findAll()
+          .then(function (productos) {
+            res.render('single-product', {
+              product: producto,
+              products: productos
+            })
+          })
       })
     /* for (let i = 0; i < productsPARSED.length; i++) {
       if (productsPARSED[i].productID == req.params.productId) {
